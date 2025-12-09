@@ -1,10 +1,7 @@
 [build]
-  # navigate into frontend folder, install + build
-  command = "cd frontend && npm install && npm run build"
-  # for CRA use "build", for Vite use "dist" (adjust if needed)
-  publish = "frontend/build"  # or "frontend/dist"
+  command = "npm install && npm run build"
+  publish = "build"
 
-# Optional: SPA redirect fallback if you prefer not to rely on _redirects file
 [[redirects]]
   from = "/*"
   to = "/index.html"
