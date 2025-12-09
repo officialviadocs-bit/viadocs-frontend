@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 🌐 Meta & Compatibility -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#4066E0" />
+
+    <!-- 🧠 Preconnect & Preload for Faster Rendering -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      />
+    </noscript>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+
+    <!-- 🔤 Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- 🖼️ Preload Key Images -->
+    <link rel="preload" href="%PUBLIC_URL%/logo192.webp" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/logo193.webp" as="image" />
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/manifest.json"
+      as="fetch"
+      crossorigin="anonymous"
+    />
+
+    <!-- 📊 Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DM9KZJCSF6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      window.addEventListener("load", function () {
+        try {
+          gtag("js", new Date());
+          gtag("config", "G-DM9KZJCSF6", {
+            anonymize_ip: true,
+            send_page_view: true,
+          });
+        } catch (e) {
+          console.warn("Analytics failed silently");
+        }
+      });
+    </script>
+
+    <!-- 💰 Google AdSense -->
+    <meta
+      name="google-adsense-account"
+      content="ca-pub-3307249219608799"
+    />
+
+    <!-- 🧭 SEO & Indexing -->
+    <title>Viadocs | Free AI Document Builder & PDF Tools Online</title>
+    <meta
+      name="title"
+      content="Viadocs | Free AI Document Builder & PDF Tools Online"
+    />
+    <meta
+      name="description"
+      content="Viadocs — Create, edit, convert, and manage your project documents faster using AI. A free online document builder with PDF tools, collaboration, and smart automation."
+    />
+    <meta
+      name="keywords"
+      content="Viadocs, AI document builder, PDF tools, document converter, free online PDF editor, AI assistant, engineering students, professionals"
+    />
+    <meta name="author" content="Work Wizards Innovations" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- 🌍 Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://localhost:3000/" />
+    <meta
+      property="og:title"
+      content="Viadocs - AI Document Tools for Students & Employees"
+    />
+    <meta
+      property="og:description"
+      content="Create, edit, and manage PDFs with Viadocs — an AI-powered workspace built for students and professionals."
+    />
+    <meta property="og:image" content="http://localhost:3000/logo.png" />
+
+    <!-- 🐦 Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="http://localhost:3000/" />
+    <meta
+      property="twitter:title"
+      content="Viadocs | Free AI Document Builder & PDF Tools Online"
+    />
+    <meta
+      property="twitter:description"
+      content="Smart, AI-powered document and PDF editing platform — free forever."
+    />
+    <meta property="twitter:image" content="http://localhost:3000/logo.png" />
+    <link rel="canonical" href="http://localhost:3000/" />
+
+    <!-- 🧱 Schema.org (Structured Data) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Viadocs",
+        "url": "http://localhost:3000",
+        "logo": "http://localhost:3000/logo.png",
+        "sameAs": ["https://linkedin.com/company/work-wizards-innovations"],
+        "description": "Viadocs is an AI-powered document creation and PDF management platform for students and professionals.",
+        "founder": {
+          "@type": "Organization",
+          "name": "Work Wizards Innovations"
+        }
+      }
+    </script>
+
+    <!-- 📱 PWA Manifest & Icons -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.webp" />
+    <link rel="icon" href="%PUBLIC_URL%/logo193.webp" />
+
+    <!-- ⚡ Critical Loader Styles -->
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      html,
+      body {
+        margin: 0;
+        height: 100%;
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: #f9fafb;
+        color: #111827;
+      }
+      #root {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      .loader {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(90deg, #1ec6d7, #4066e0, #6a3fd7);
+        color: #fff;
+        font-weight: 600;
+        font-size: 1.25rem;
+        text-align: center;
+      }
+      .loader img {
+        width: 96px;
+        height: 96px;
+        margin-bottom: 18px;
+        animation: fadeIn 1.2s ease-in-out infinite alternate;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+      }
+      .loader-text {
+        animation: pulse 1.4s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.7;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes fadeIn {
+        0% {
+          opacity: 0.75;
+          transform: scale(0.96);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1.02);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>You need to enable JavaScript to run Viadocs.</noscript>
+
+    <div id="root">
+      <!-- ⚙️ Lightweight Splash Loader (before React mounts) -->
+      <div class="loader" aria-hidden="true">
+        <img
+          src="%PUBLIC_URL%/logo192.webp"
+          alt="Viadocs Logo"
+          width="96"
+          height="96"
+        />
+        <div class="loader-text">Loading Viadocs...</div>
+      </div>
+    </div>
+
+    <!-- 🧩 Third-Party Scripts (Loaded After Render) -->
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3307249219608799"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- 🧭 Minor Enhancements -->
+    <script>
+      // Smooth scroll and minor layout stabilization
+      document.documentElement.style.scrollBehavior = "smooth";
+    </script>
+
+    <!-- 📝 Notes:
+      - React build injects hashed JS & CSS bundles automatically.
+      - No inline JS/CSS blocking first paint.
+      - Fonts and images preloaded for better LCP.
+    -->
+
+    <!-- © 2025 Work Wizards Innovations / Viadocs -->
+  </body>
+</html>

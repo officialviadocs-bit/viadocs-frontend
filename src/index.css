@@ -1,0 +1,192 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+/* ============================= */
+/* GLOBAL BASE STYLES            */
+/* ============================= */
+html, body, #root {
+  height: 100%;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  background-color: #F9FAFB;
+}
+
+/* ============================= */
+/* ANIMATIONS                    */
+/* ============================= */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 4s ease infinite;
+}
+
+/* 🔧 Reduce animation cost for mobile devices */
+@media (max-width: 640px) {
+  .animate-gradient,
+  .animate-float,
+  .animate-pulse-slow,
+  .animate-bounce-slow {
+    animation: none !important;
+  }
+}
+
+/* Fade animation utility */
+@layer utilities {
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* ============================= */
+/* HEADER SPACING FIX            */
+/* ============================= */
+/* All pages with fixed Header.jsx should have padding */
+.app-with-fixed-header {
+  padding-top: 56px; /* mobile */
+}
+@media (min-width: 640px) {
+  .app-with-fixed-header {
+    padding-top: 72px; /* desktop */
+  }
+}
+
+/* Ensure anchor links scroll below header */
+main {
+  scroll-margin-top: 80px;
+}
+
+/* ============================= */
+/* EDITOR + TABLE STYLES         */
+/* ============================= */
+.editor h1, .editor h2, .editor h3, .editor h4, .editor h5, .editor h6 {
+  font-weight: bold;
+  margin: 0.75em 0;
+}
+.editor h1 { font-size: 2em; }
+.editor h2 { font-size: 1.5em; }
+.editor h3 { font-size: 1.17em; }
+.editor h4 { font-size: 1em; }
+.editor h5 { font-size: 0.83em; }
+.editor h6 { font-size: 0.67em; }
+
+/* Table Resizing */
+.resizable-table {
+  border-collapse: collapse;
+  table-layout: auto;
+}
+.resizable-table td {
+  position: relative;
+  padding: 8px;
+  border: 1px solid #ccc;
+  min-width: 60px;
+  min-height: 30px;
+}
+.col-resizer, .row-resizer {
+  background: transparent;
+  transition: background 0.2s;
+}
+.col-resizer:hover, .row-resizer:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+.col-resizer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 5px;
+  height: 100%;
+  cursor: col-resize;
+}
+.row-resizer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  cursor: row-resize;
+}
+
+/* ============================= */
+/* IMAGE STYLES                  */
+/* ============================= */
+.doc-image.selected, .doc-image-wrapper.selected {
+  outline: 2px solid #4f46e5;
+  outline-offset: 3px;
+}
+.doc-image-wrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+.doc-image-wrapper img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Circular Profile Images */
+.object-cover {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Inherit color for list markers */
+.editor ul li::marker,
+.editor ol li::marker {
+  color: inherit;
+}
+/* 🔧 Fixed Header Space */
+.app-with-fixed-header {
+  padding-top: 72px; /* for desktop */
+}
+
+@media (max-width: 640px) {
+  .app-with-fixed-header {
+    padding-top: 88px;
+    height: 72px; /* extra space for mobile header */
+  }
+}
+
+/* 🧭 Back Button Margin Adjustment */
+.back-btn-fix {
+  margin-top: 12px; /* push button slightly down below header */
+}
+
+@media (max-width: 640px) {
+  .back-btn-fix {
+    margin-top: 20px; /* more spacing for mobile */
+  }
+}
+@media (max-width: 640px) {
+  .shadow-lg, .shadow-xl {
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1) !important;
+  }
+}
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #EAF6FF, #F3F8FF, #E4E1FF);
+}
+.typing::after {
+  content: '|';
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}

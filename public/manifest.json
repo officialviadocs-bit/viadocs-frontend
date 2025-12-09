@@ -1,0 +1,49 @@
+{
+  "short_name": "Viadocs",
+  "name": "Viadocs - Smart AI Document Creator",
+  "description": "Viadocs — Create, edit, merge, and manage PDFs with AI. A free online platform for students and professionals to build, convert, and collaborate on documents effortlessly.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#ffffff",
+  "theme_color": "#4066E0",
+  "categories": ["productivity", "tools", "education", "ai"],
+
+  "icons": [
+    {
+      "src": "logo192.webp",
+      "sizes": "192x192",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "logo512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ],
+
+  "screenshots": [
+    {
+      "src": "http://localhost:3000/screenshot-home.webp",
+      "sizes": "1280x720",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Viadocs Web Dashboard"
+    },
+    {
+      "src": "http://localhost:3000/screenshot-mobile.webp",
+      "sizes": "600x800",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Viadocs Mobile App View"
+    }
+  ],
+
+  "lang": "en",
+  "dir": "ltr",
+  "prefer_related_applications": false,
+  "related_applications": []
+}

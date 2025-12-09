@@ -1,0 +1,26 @@
+# ================================
+# 🤖 Robots.txt — Viadocs SEO & Indexing
+# ================================
+
+User-agent: *
+Allow: /
+
+# Prevent crawlers from accessing internal routes or sensitive pages
+Disallow: /admin/
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+Disallow: /forgot-password
+
+# Sitemap for better Google indexing
+Sitemap: http://localhost:3000/sitemap.xml
+
+# Crawl-delay (optional — keeps your server safe from overload)
+Crawl-delay: 10
+
+# ================================
+# Notes:
+# - "Allow: /" enables all pages to be indexed by Google.
+# - "Sitemap" helps search engines discover all your routes quickly.
+# - Disallowing auth pages avoids unnecessary duplicate indexing.
+# ================================
