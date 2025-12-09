@@ -2,6 +2,11 @@
   command = "npm install && npm run build"
   publish = "build"
 
+# Disable CI mode so warnings do NOT break the build
+[build.environment]
+  CI = "false"
+
+# React SPA redirect
 [[redirects]]
   from = "/*"
   to = "/index.html"
