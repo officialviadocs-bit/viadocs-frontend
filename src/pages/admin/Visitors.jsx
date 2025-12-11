@@ -35,7 +35,7 @@ export default function Visitors() {
   const fetchVisitors = async () => {
     try {
       setError("");
-      const res = await axios.get("http://localhost:5000/api/admin/visitors", {
+      const res = await axios.get("http://viadocs.in//api/admin/visitors", {
         headers: { "Cache-Control": "no-cache" },
       });
       if (res.status === 200) {

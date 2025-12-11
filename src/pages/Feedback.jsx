@@ -31,7 +31,7 @@ export default function Feedback() {
     if (!token) return;
 
     axios
-      .get("http://localhost:5000/api/profile", {
+      .get("http://viadocs.in//api/profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -57,7 +57,7 @@ export default function Feedback() {
     try {
       const token = localStorage.getItem("token");
       const res = await axios.post(
-        "http://localhost:5000/api/feedback",
+        "http://viadocs.in//api/feedback",
         {
           message: feedback.message,
           rating: feedback.rating,

@@ -88,7 +88,7 @@ export default function Profile() {
 
   const fetchProfile = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/profile", {
+      const response = await axios.get("http://viadocs.in//api/profile", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = response.data;
@@ -96,7 +96,7 @@ export default function Profile() {
 
       // prefix local static path with backend origin if needed
       if (data.profileImage && data.profileImage.startsWith('/')) {
-        data.profileImage = (window.location.origin.includes('localhost') ? 'http://localhost:5000' : window.location.origin) + data.profileImage;
+        data.profileImage = (window.location.origin.includes('localhost') ? 'http://viadocs.in/' : window.location.origin) + data.profileImage;
       }
 
       setProfile({
@@ -140,7 +140,7 @@ export default function Profile() {
       }
 
       const response = await axios.put(
-        "http://localhost:5000/api/profile",
+        "http://viadocs.in//api/profile",
         updateData,
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -242,7 +242,7 @@ export default function Profile() {
       const formData = new FormData();
       formData.append("profileImage", croppedFile);
 
-      const res = await fetch("http://localhost:5000/api/profile/upload", {
+      const res = await fetch("http://viadocs.in//api/profile/upload", {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,
@@ -279,7 +279,7 @@ export default function Profile() {
     try {
       const formData = new FormData();
       formData.append("profileImage", fileForUpload);
-      const res = await fetch("http://localhost:5000/api/profile/upload", {
+      const res = await fetch("http://viadocs.in//api/profile/upload", {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

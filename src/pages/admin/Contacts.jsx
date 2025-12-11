@@ -11,7 +11,7 @@ export default function Contacts() {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://localhost:5000/api/admin/contacts");
+      const res = await fetch("http://viadocs.in//api/admin/contacts");
       const data = await res.json();
 
       if (res.ok) {
@@ -35,7 +35,7 @@ export default function Contacts() {
     if (!deleteTarget) return;
     try {
       const res = await fetch(
-        `http://localhost:5000/api/admin/contacts/${deleteTarget._id}`,
+        `http://viadocs.in//api/admin/contacts/${deleteTarget._id}`,
         { method: "DELETE" }
       );
       const data = await res.json();

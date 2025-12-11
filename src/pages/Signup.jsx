@@ -35,7 +35,7 @@ const Signup = () => {
       if (formData.username.trim()) {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/auth/check-username?username=${formData.username}`
+            `http://viadocs.in//api/auth/check-username?username=${formData.username}`
           );
           const data = await res.json();
           setUsernameError(!data.available ? "Username already taken" : "");
@@ -55,7 +55,7 @@ const Signup = () => {
       if (formData.email.trim()) {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/auth/check-email?email=${formData.email}`
+            `http://viadocs.in//api/auth/check-email?email=${formData.email}`
           );
           const data = await res.json();
           setEmailError(!data.available ? "Email already registered" : "");
@@ -76,7 +76,7 @@ const Signup = () => {
       if (showReferral && code.length > 0) {
         try {
           const res = await fetch(
-            `http://localhost:5000/api/auth/check-referral?code=${encodeURIComponent(
+            `http://viadocs.in//api/auth/check-referral?code=${encodeURIComponent(
               code
             )}`
           );
@@ -136,7 +136,7 @@ const Signup = () => {
 
     setLoading(true);
     try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
+      const res = await fetch("http://viadocs.in//api/auth/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

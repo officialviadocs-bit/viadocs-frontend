@@ -94,7 +94,7 @@ export default function Home() {
   const fetchDocs = useCallback(async () => {
     if (!isLoggedIn) return;
     try {
-      const res = await axios.get("http://localhost:5000/api/docs/my-docs", {
+      const res = await axios.get("http://viadocs.in//api/docs/my-docs", {
         headers: { Authorization: `Bearer ${token}` },
       });
       // Support both res.data and res.data.docs
@@ -143,7 +143,7 @@ export default function Home() {
     const checkRole = async () => {
       if (!isLoggedIn) return;
       try {
-        const res = await axios.get("http://localhost:5000/api/profile", {
+        const res = await axios.get("http://viadocs.in//api/profile", {
           headers: { Authorization: `Bearer ${token}` },
         });
         if (!res.data.role) {
@@ -175,7 +175,7 @@ export default function Home() {
     try {
       // POST to set role; adjust endpoint to match your backend if needed
       const res = await axios.post(
-        "http://localhost:5000/api/profile/role",
+        "http://viadocs.in//api/profile/role",
         { role },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -203,7 +203,7 @@ export default function Home() {
   const setFavorite = async (id) => {
     try {
       const res = await axios.patch(
-        `http://localhost:5000/api/docs/my-docs/${id}/favorite`,
+        `http://viadocs.in//api/docs/my-docs/${id}/favorite`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -225,7 +225,7 @@ export default function Home() {
   // ---------- Share as PDF ----------
   const shareDocAsPDF = async (doc) => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/docs/my-docs/${doc._id}`, {
+      const res = await axios.get(`http://viadocs.in//api/docs/my-docs/${doc._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       const fullDoc = res.data;
@@ -290,7 +290,7 @@ export default function Home() {
   const confirmDelete = async () => {
     if (!deleteTarget || deleteInput !== deleteTarget.name) return;
     try {
-      await axios.delete(`http://localhost:5000/api/docs/my-docs/${deleteTarget._id}`, {
+      await axios.delete(`http://viadocs.in//api/docs/my-docs/${deleteTarget._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setDeleteTarget(null);

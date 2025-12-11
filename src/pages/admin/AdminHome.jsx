@@ -66,7 +66,7 @@ export default function AdminHome() {
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:5000/api/admin/dashboard?referral=${encodeURIComponent(
+          `http://viadocs.in//api/admin/dashboard?referral=${encodeURIComponent(
             referral
           )}&user_type=${encodeURIComponent(userType)}`
         );
@@ -98,7 +98,7 @@ export default function AdminHome() {
       try {
         setLoading(true);
         const res = await fetch(
-          `http://localhost:5000/api/admin/dashboard?period=${encodeURIComponent(
+          `http://viadocs.in//api/admin/dashboard?period=${encodeURIComponent(
             filterType
           )}&user_type=${encodeURIComponent(userType)}`
         );

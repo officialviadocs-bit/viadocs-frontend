@@ -15,7 +15,7 @@ function Header() {
     const token = localStorage.getItem("token");
     if (!token) return;
 
-    fetch("http://localhost:5000/api/auth/verify", {
+    fetch("http://viadocs.in//api/auth/verify", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())

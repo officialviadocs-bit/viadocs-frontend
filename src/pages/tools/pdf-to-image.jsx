@@ -23,7 +23,7 @@ export default function PdfToImage() {
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
-  const API_BASE_URL = "http://localhost:5000/api/tools/pdf-to-image/";
+  const API_BASE_URL = "http://viadocs.in//api/tools/pdf-to-image/";
 
   
 

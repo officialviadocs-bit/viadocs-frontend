@@ -62,7 +62,7 @@ export default function PdfSplit() {
       formData.append("ranges", `${fromPage}-${toPage}`);
 
       const response = await axios.post(
-        "http://localhost:5000/api/tools/pdf-split",
+        "http://viadocs.in//api/tools/pdf-split",
         formData,
         { responseType: "blob" }
       );

@@ -67,7 +67,7 @@ export default function ImageToPdf() {
       files.forEach((file) => formData.append("images", file));
 
       const response = await axios.post(
-        "http://localhost:5000/api/tools/image-to-pdf",
+        "http://viadocs.in//api/tools/image-to-pdf",
         formData,
         { responseType: "blob" }
       );
