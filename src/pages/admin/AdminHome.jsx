@@ -122,13 +122,6 @@ export default function AdminHome() {
 
   return (
     <main className="sm:ml-56 pt-20 pb-10 bg-[#D3EAFD] min-h-screen flex justify-center transition-all duration-300">
-      {/* AdSense Script and Container */}
-      <script
-        async="async"
-        data-cfasync="false"
-        src="//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js"
-      ></script>
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac"></div>
 
       <div className="w-full max-w-6xl px-4 sm:px-6">
         {/* ===== Filter Section ===== */}

@@ -1,30 +1,11 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, ShieldCheck, } from "lucide-react";
+import { ArrowLeft, ShieldCheck } from "lucide-react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 
 export default function PrivacyPolicy() {
   const navigate = useNavigate();
-
-  // AdSense injection (defensive)
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      document.body.appendChild(container);
-    }
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    container.parentNode.insertBefore(script, container.nextSibling);
-    return () => {
-      script.remove();
-    };
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-black w-full">
@@ -265,10 +246,8 @@ export default function PrivacyPolicy() {
         </div>
       </main>
 
-       <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
-
-      <Footer />
-     
+      
+    <Footer />
     </div>
   );
 }

@@ -40,31 +40,6 @@ export default function ForgotPassword() {
     }
   }, [timer]);
 
-  // Ad script injection (kept separate from timer effect)
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    // ensure container exists (we also add it in JSX below)
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      document.body.appendChild(container);
-    }
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src =
-      "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    container.parentNode.insertBefore(script, container.nextSibling);
-
-    return () => {
-      script.remove();
-      // keep container since we add it in JSX; remove only if you created it dynamically above
-      // container.remove();
-    };
-  }, []);
-
   // ✅ Step 1: Check Email Existence
   const checkEmail = async () => {
     if (!email.trim()) return;
@@ -354,8 +329,7 @@ export default function ForgotPassword() {
         </div>
       </div>
 
-      {/* Ad container required by the vendor script */}
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+
     </>
   );
 }

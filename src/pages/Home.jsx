@@ -318,27 +318,7 @@ export default function Home() {
     }
   };
 
-  // ---------- AdSense injection (minimal, defensive) ----------
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      // place the container near the end of body if not found in JSX
-      document.body.appendChild(container);
-    }
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    container.parentNode.insertBefore(script, container.nextSibling);
-    return () => {
-      script.remove();
-      // keep the container (if you prefer removing when unmounting uncomment next line)
-      // container.remove();
-    };
-  }, []);
+  
 
   return (
     // Outer wrapper is full width so background and footer span the entire viewport
@@ -492,10 +472,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Ad container required by the vendor script */}
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
-      {/* Delete confirmation modal - requires typing doc name */}
 
           {/* Document List */}
           {isLoggedIn && (
@@ -787,10 +763,7 @@ export default function Home() {
           </div>
         </main>
       </div>
-      {/* Ad container required by the vendor script */}
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
-      {/* Delete confirmation modal - requires typing doc name */}
-
+     
 {/* ===== Folder Creation Video Section (Perfect Rectangle) ===== */}
 <section className="w-full px-4 py-12 bg-white text-center border-t border-[#E0ECFF]">
   <h2 className="text-2xl sm:text-3xl font-extrabold text-black mb-6">
@@ -1090,9 +1063,6 @@ export default function Home() {
         </section>
 
           <Footer />
-          {/* Ad container required by the vendor script */}
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
-      {/* Delete confirmation modal - requires typing doc name */}
       {deleteTarget && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40">
           <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-lg">

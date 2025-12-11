@@ -302,25 +302,6 @@ export default function Profile() {
     }
   };
 
-  // AdSense injection (defensive)
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      document.body.appendChild(container);
-    }
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    container.parentNode.insertBefore(script, container.nextSibling);
-    return () => {
-      script.remove();
-    };
-  }, []);
-
   // ---------- UI ----------
   if (loading) {
     return (

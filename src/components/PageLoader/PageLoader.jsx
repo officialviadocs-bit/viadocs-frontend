@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageLoader = ({ visible }) => {
+const PageLoader = ({ visible = true }) => {
   return (
     <div
       style={{
@@ -12,17 +12,17 @@ const PageLoader = ({ visible }) => {
         display: visible ? 'flex' : 'none',
         alignItems: 'center',
         justifyContent: 'center',
-        background: 'rgba(255,255,255,0.6)',
+        background: 'rgba(255,255,255,0.85)',
         zIndex: 9999,
       }}
     >
       <div style={{
-        width: 48,
-        height: 48,
-        borderRadius: 24,
-        border: '4px solid rgba(63,81,181,0.2)',
-        borderTop: '4px solid #3F51B5',
-        animation: 'spin 0.6s linear infinite'
+        width: 64,
+        height: 64,
+        borderRadius: 32,
+        border: '6px solid rgba(63,81,181,0.15)',
+        borderTop: '6px solid #3F51B5',
+        animation: 'spin 0.8s linear infinite'
       }} />
 
       <style>{`

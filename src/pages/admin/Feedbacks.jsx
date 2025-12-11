@@ -70,9 +70,6 @@ export default function Feedbacks() {
 
   return (
     <div className="p-6 pt-20 sm:ml-56 min-h-screen bg-[#D3EAFD] relative">
-      {/* AdSense Script and Container */}
-      <script async="async" data-cfasync="false" src="//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js"></script>
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac"></div>
 
       <Toaster position="top-center" />
 

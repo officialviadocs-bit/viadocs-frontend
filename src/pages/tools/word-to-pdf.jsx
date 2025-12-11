@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -99,28 +99,6 @@ export default function WordToPDF() {
       fileInputRef.current.value = "";
     }
   };
-
-  // Inject ad script for this page
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      // place container at end of body if not present in JSX
-      document.body.appendChild(container);
-    }
-    if (!document.querySelector(`script[data-cfasync][src*="effectivegatecpm.com"]`)) {
-      const script = document.createElement("script");
-      script.async = true;
-      script.setAttribute("data-cfasync", "false");
-      script.src =
-        "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-      container.parentNode.insertBefore(script, container.nextSibling);
-      return () => script.remove();
-    }
-    return undefined;
-  }, []);
 
   return (
     <>
@@ -266,7 +244,7 @@ export default function WordToPDF() {
 
       </main>
 
-              <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+            
 <div className="mt-10 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
   <h2 className="text-xl font-semibold text-black mb-2">
     Convert Word to PDF Online – Free & Secure

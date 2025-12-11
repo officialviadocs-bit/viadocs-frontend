@@ -26,8 +26,6 @@
       />
     </noscript>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
 
     <!-- 🔤 Fonts -->
     <link
@@ -45,31 +43,7 @@
       crossorigin="anonymous"
     />
 
-    <!-- 📊 Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DM9KZJCSF6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      window.addEventListener("load", function () {
-        try {
-          gtag("js", new Date());
-          gtag("config", "G-DM9KZJCSF6", {
-            anonymize_ip: true,
-            send_page_view: true,
-          });
-        } catch (e) {
-          console.warn("Analytics failed silently");
-        }
-      });
-    </script>
 
-    <!-- 💰 Google AdSense -->
-    <meta
-      name="google-adsense-account"
-      content="ca-pub-3307249219608799"
-    />
 
     <!-- 🧭 SEO & Indexing -->
     <title>Viadocs | Free AI Document Builder & PDF Tools Online</title>
@@ -162,8 +136,8 @@
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background: linear-gradient(90deg, #1ec6d7, #4066e0, #6a3fd7);
-        color: #fff;
+        background: #ffffff; /* plain white background */
+        color: #111827; /* dark text */
         font-weight: 600;
         font-size: 1.25rem;
         text-align: center;
@@ -172,11 +146,12 @@
         width: 96px;
         height: 96px;
         margin-bottom: 18px;
-        animation: fadeIn 1.2s ease-in-out infinite alternate;
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        animation: none; /* disable animated fade/scale */
+        filter: none;
       }
       .loader-text {
-        animation: pulse 1.4s ease-in-out infinite;
+        animation: none; /* static text */
+        color: #6b7280; /* gray-500 */
       }
       @keyframes pulse {
         0%,

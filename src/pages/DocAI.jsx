@@ -1,28 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Cpu, ArrowLeft, Mail } from "lucide-react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import axios from "axios";
 
-// Ad placeholder component
-function AdPlaceholder({ className = "" }) {
-  const wrapperRef = useRef(null);
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    wrapper.appendChild(script);
-    const container = document.createElement("div");
-    container.id = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    wrapper.appendChild(container);
-    return () => { if (wrapper) wrapper.innerHTML = ""; };
-  }, []);
-  return <div ref={wrapperRef} className={className} aria-hidden="true" />;
-}
+
 
 export default function DocAI() {
   const navigate = useNavigate();
@@ -151,20 +134,6 @@ export default function DocAI() {
         </div>
       </main>
 
-      {/* Inline ad between main card and About section */}
-      <div className="flex justify-center my-8">
-        <AdPlaceholder className="w-full max-w-3xl" />
-      </div>
-
-      {/* Right-side hanging ad */}
-      <div className="pointer-events-none">
-        <AdPlaceholder className="hidden lg:block fixed right-4 top-1/3 z-50 w-48 pointer-events-auto" />
-      </div>
-
-      {/* Ad above footer */}
-      <div className="w-full bg-transparent flex justify-center py-6">
-        <AdPlaceholder className="w-full max-w-7xl" />
-      </div>
 
       {/* ===== About Docxy AI Section ===== */}
       <section className="py-16 bg-white text-center border-t border-gray-200">

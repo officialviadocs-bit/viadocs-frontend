@@ -21,9 +21,6 @@ export default function Premiums() {
 
     return (
         <div className="admin-premiums" style={{ padding: 20 }}>
-            {/* AdSense Script and Container */}
-            <script async="async" data-cfasync="false" src="//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js"></script>
-            <div id="container-c152ce441ed68e2ebb08bdbddefa4fac"></div>
             {/* ...existing code... */}
             <header style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
                 <div>

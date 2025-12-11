@@ -17,6 +17,12 @@ function Footer({ sticky = false }) {
   const navigate = useNavigate();
   const stickyClasses = sticky ? "fixed bottom-0 left-0 w-full z-40 shadow-inner" : "";
 
+  // Helper function to navigate and scroll to top
+  const navigateToTop = (path) => {
+    navigate(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer
       className={`${stickyClasses} bg-gradient-to-br from-[#2F3438] via-[#373C3F] to-[#3F4448] text-gray-200 transition-colors duration-300`}
@@ -51,7 +57,7 @@ function Footer({ sticky = false }) {
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li
-                onClick={() => navigate("/home")}
+                onClick={() => navigateToTop("/home")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -60,7 +66,7 @@ function Footer({ sticky = false }) {
                 Home
               </li>
               <li
-                onClick={() => navigate("/create-doc")}
+                onClick={() => navigateToTop("/create-doc")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -69,7 +75,7 @@ function Footer({ sticky = false }) {
                 Create Doc
               </li>
               <li
-                onClick={() => navigate("/tools")}
+                onClick={() => navigateToTop("/tools")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -87,7 +93,7 @@ function Footer({ sticky = false }) {
             </h3>
             <ul className="space-y-2 text-sm text-gray-400">
               <li
-                onClick={() => navigate("/about")}
+                onClick={() => navigateToTop("/about")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -96,7 +102,7 @@ function Footer({ sticky = false }) {
                 About
               </li>
               <li
-                onClick={() => navigate("/privacy-policy")}
+                onClick={() => navigateToTop("/privacy-policy")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -105,7 +111,7 @@ function Footer({ sticky = false }) {
                 Privacy Policy
               </li>
               <li
-                onClick={() => navigate("/terms")}
+                onClick={() => navigateToTop("/terms")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -114,7 +120,7 @@ function Footer({ sticky = false }) {
                 Terms & Conditions
               </li>
               <li
-                onClick={() => navigate("/contact")}
+                onClick={() => navigateToTop("/contact")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>
@@ -123,7 +129,7 @@ function Footer({ sticky = false }) {
                 Contact Us
               </li>
               <li
-                onClick={() => navigate("/help")}
+                onClick={() => navigateToTop("/help")}
                 className="flex items-center gap-2 cursor-pointer hover:text-white transition-all justify-center sm:justify-start"
               >
                 <Suspense fallback={<span>•</span>}>

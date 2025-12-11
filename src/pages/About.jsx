@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -10,7 +10,6 @@ import {
   LineChart,
   HeartHandshake,
   Sparkles,
-  Rocket,
   Award,
   BookOpen,
   Cpu,
@@ -31,35 +30,6 @@ export default function About() {
   };
 
   const cardHover = "hover:shadow-2xl hover:scale-[1.03] transition-all duration-300";
-
-  // Insert ad script & ensure container exists before loading script
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    // ensure container exists (it is also added in JSX below; this is defensive)
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      document.body.appendChild(container);
-    }
-
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src =
-      "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    // append script after ensuring container is present
-    container.parentNode.insertBefore(script, container.nextSibling);
-
-    return () => {
-      script.remove();
-      // optional: keep container in JSX, so only remove if we created it dynamically
-      // if it was dynamically created here, remove it
-      if (!document.querySelector(`#${containerId}`)) return;
-      // don't remove if container is part of the JSX; if you want to remove always, uncomment next line
-      // container.remove();
-    };
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-black">
@@ -305,9 +275,8 @@ export default function About() {
         </div>
       </main>
 
-      {/* Ad container required by the vendor script */}
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
 
+     
       <Footer />
     </div>
   );

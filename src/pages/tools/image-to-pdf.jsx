@@ -275,9 +275,7 @@ export default function ImageToPdf() {
 </div>
 
 
-      <div className="w-full py-4 bg-white">
-        <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" className="w-full" />
-      </div>
+     
 
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">
   <div className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-white font-medium tracking-wide">

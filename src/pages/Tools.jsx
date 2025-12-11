@@ -1,5 +1,5 @@
 // src/pages/Tools.jsx
-import React, { useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
@@ -25,24 +25,7 @@ import {
 export default function Tools() {
   const navigate = useNavigate();
 
-  // Add AdSense script and container (defensive)
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      document.body.appendChild(container);
-    }
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    container.parentNode.insertBefore(script, container.nextSibling);
-    return () => {
-      script.remove();
-    };
-  }, []);
+  
 
   const tools = [
     { slug: "pdf-to-word", name: "PDF to Word", desc: "Convert PDF into editable Word docs", icon: FileText },
@@ -114,7 +97,6 @@ export default function Tools() {
       </main>
 
 
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
      
 {/* ===== Viadocs Features Section ===== */}
 <section className="py-16 bg-white border-t border-gray-200 text-center">

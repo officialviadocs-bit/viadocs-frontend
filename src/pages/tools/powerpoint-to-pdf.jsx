@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -104,26 +104,6 @@ export default function PowerpointToPdf() {
     setDownloadUrl(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
   };
-
-  useEffect(() => {
-    const containerId = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    let container = document.getElementById(containerId);
-    if (!container) {
-      container = document.createElement("div");
-      container.id = containerId;
-      document.body.appendChild(container);
-    }
-    if (!document.querySelector(`script[data-cfasync][src*="effectivegatecpm.com"]`)) {
-      const script = document.createElement("script");
-      script.async = true;
-      script.setAttribute("data-cfasync", "false");
-      script.src =
-        "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-      container.parentNode.insertBefore(script, container.nextSibling);
-      return () => script.remove();
-    }
-    return undefined;
-  }, []);
 
   return (
     <div className="flex flex-col min-h-screen bg-white text-black">
@@ -273,7 +253,7 @@ export default function PowerpointToPdf() {
       </main>
 
     
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+     
       <div className="mt-10 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
         <h2 className="text-xl font-semibold text-black mb-2">
           Convert PowerPoint Presentations to PDF

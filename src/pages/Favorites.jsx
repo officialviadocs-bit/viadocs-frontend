@@ -1,4 +1,4 @@
-import React, { useEffect, useState,  useCallback, useRef, useEffect as useEf } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import image1 from "../assets/image1.webp";
 import image2 from "../assets/images2.webp";
@@ -17,24 +17,6 @@ import {
 } from "lucide-react";
 import { jsPDF } from "jspdf";
 
-// Ad placeholder component
-function AdPlaceholder({ className = "" }) {
-  const wrapperRef = useRef(null);
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    wrapper.appendChild(script);
-    const container = document.createElement("div");
-    container.id = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    wrapper.appendChild(container);
-    return () => { if (wrapper) wrapper.innerHTML = ""; };
-  }, []);
-  return <div ref={wrapperRef} className={className} aria-hidden="true" />;
-}
 
 export default function Favorites() {
   const [docs, setDocs] = useState([]);
@@ -235,10 +217,7 @@ export default function Favorites() {
             </p>
           )}
 
-          {/* Inline ad after docs grid */}
-          <div className="flex justify-center my-8">
-            <AdPlaceholder className="w-full max-w-3xl" />
-          </div>
+          
 
           {/* ===== Viadocs Features Section ===== */}
           <section className="mt-0 py-16 bg-white text-center border-t border-gray-200">
@@ -333,14 +312,7 @@ export default function Favorites() {
       </main>
 
       {/* Right-side hanging ad */}
-      <div className="pointer-events-none">
-        <AdPlaceholder className="hidden lg:block fixed right-4 top-1/3 z-50 w-48 pointer-events-auto" />
-      </div>
-
-      {/* Ad above footer */}
-      <div className="w-full bg-transparent flex justify-center py-6">
-        <AdPlaceholder className="w-full max-w-7xl" />
-      </div>
+    
 
       <Footer />
 

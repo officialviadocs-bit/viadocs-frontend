@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   ArrowLeft,
@@ -16,24 +16,7 @@ import Footer from "../components/Footer/Footer";
 import axios from "axios";
 import { toast } from "react-toastify";
 
-// Ad placeholder component: injects the ad script and container div on mount
-function AdPlaceholder({ className = "" }) {
-  const wrapperRef = useRef(null);
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    wrapper.appendChild(script);
-    const container = document.createElement("div");
-    container.id = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    wrapper.appendChild(container);
-    return () => { if (wrapper) wrapper.innerHTML = ""; };
-  }, []);
-  return <div ref={wrapperRef} className={className} aria-hidden="true" />;
-}
+
 
 export default function Feedback() {
   const navigate = useNavigate();
@@ -223,10 +206,7 @@ export default function Feedback() {
             </form>
           </div>
 
-          {/* Inline ad: between feedback card and "Why Feedback Matters" */}
-          <div className="flex justify-center my-8">
-            <AdPlaceholder className="w-full max-w-3xl" />
-          </div>
+         
 
           {/* Why Feedback Matters */}
           <div className="p-8 mt-12 border border-gray-200 rounded-2xl bg-white shadow-md">
@@ -297,15 +277,9 @@ export default function Feedback() {
         </div>
       </main>
 
-      {/* Right-side hanging ad (desktop only) */}
-      <div className="pointer-events-none">
-        <AdPlaceholder className="hidden lg:block fixed right-4 top-1/3 z-50 w-48 pointer-events-auto" />
-      </div>
+     
 
-      {/* Ad above footer */}
-      <div className="w-full bg-transparent flex justify-center py-6">
-        <AdPlaceholder className="w-full max-w-7xl" />
-      </div>
+    
 
       <Footer />
     </div>

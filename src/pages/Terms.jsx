@@ -1,27 +1,8 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft,  Scale } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
-
-// Ad placeholder component
-function AdPlaceholder({ className = "" }) {
-  const wrapperRef = useRef(null);
-  useEffect(() => {
-    const wrapper = wrapperRef.current;
-    if (!wrapper) return;
-    const script = document.createElement("script");
-    script.async = true;
-    script.setAttribute("data-cfasync", "false");
-    script.src = "//pl27986002.effectivegatecpm.com/c152ce441ed68e2ebb08bdbddefa4fac/invoke.js";
-    wrapper.appendChild(script);
-    const container = document.createElement("div");
-    container.id = "container-c152ce441ed68e2ebb08bdbddefa4fac";
-    wrapper.appendChild(container);
-    return () => { if (wrapper) wrapper.innerHTML = ""; };
-  }, []);
-  return <div ref={wrapperRef} className={className} aria-hidden="true" />;
-}
 
 export default function Terms() {
   const navigate = useNavigate();
@@ -311,10 +292,7 @@ export default function Terms() {
         </div>
       </main>
 
-      {/* Ad above footer */}
-      <div className="w-full bg-transparent flex justify-center py-6">
-        <AdPlaceholder className="w-full max-w-7xl" />
-      </div>
+     
       <Footer />
     </div>
   );
