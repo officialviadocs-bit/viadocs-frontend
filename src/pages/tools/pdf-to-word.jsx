@@ -137,7 +137,7 @@ export default function PdfToWord() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF4FC] via-[#E1EDFB] to-[#CFE3FA]">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -146,7 +146,7 @@ export default function PdfToWord() {
                    <div className="flex justify-start mb-8">
                      <button
                        onClick={() => navigate("/tools")}
-                       className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.03]"
+                       className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
                      >
                        <ArrowLeft size={18} />
                        <span className="text-sm font-medium sm:text-base">
@@ -156,13 +156,13 @@ export default function PdfToWord() {
                    </div>
           {/* 🧾 Header */}
           <div className="mb-8 text-center">
-            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#64B5F6]/40 to-[#1E88E5]/30">
-              <File className="w-10 h-10 sm:w-12 sm:h-12 text-[#1E88E5]" />
+            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-white border border-gray-200">
+              <File className="w-10 h-10 sm:w-12 sm:h-12 text-black" />
             </div>
-            <h1 className="mb-2 text-3xl font-bold text-[#0D47A1]">
+            <h1 className="mb-2 text-3xl font-bold text-black">
               PDF to Word Converter
             </h1>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-600">
               Convert your PDF documents into editable Word files
             </p>
           </div>
@@ -174,11 +174,11 @@ export default function PdfToWord() {
               <div
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
-                className="p-12 text-center transition-all border-2 border-blue-200 border-dashed cursor-pointer rounded-xl hover:border-[#1E88E5] hover:bg-[#E3F2FD]/60"
+                className="p-12 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-black hover:bg-black/5"
                 onClick={() => fileInputRef.current?.click()}
               >
-                <Upload className="w-12 h-12 mx-auto mb-4 text-[#1E88E5]" />
-                <h3 className="mb-2 text-xl font-semibold text-gray-700">
+                <Upload className="w-12 h-12 mx-auto mb-4 text-black" />
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Drop your PDF file here
                 </h3>
                 <p className="mb-4 text-gray-500">or click to browse files</p>
@@ -198,19 +198,23 @@ export default function PdfToWord() {
               // Step 2: File Display + Actions
               <div className="space-y-6">
                 {/* File Info */}
-                <div className="flex flex-col items-start gap-3 p-4 rounded-lg sm:flex-row sm:items-center bg-blue-50">
-                  <File className="w-8 h-8 text-[#1E88E5]" />
+                <div className="flex flex-col items-start gap-3 p-4 rounded-lg sm:flex-row sm:items-center bg-gray-50">
+                  <File className="w-8 h-8 text-black" />
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 break-words">
+                    <h3 className="font-semibold text-black break-words">
                       {file.name}
                     </h3>
                     <p className="text-sm text-gray-600">
-                      {(file.size / 1024 / 1024).toFixed(2)} MB
+                      {file.size < 1024
+                        ? `${file.size} B`
+                        : file.size < 1024 * 1024
+                        ? `${(file.size / 1024).toFixed(2)} KB`
+                        : `${(file.size / 1024 / 1024).toFixed(2)} MB`}
                     </p>
                   </div>
                   <button
                     onClick={resetTool}
-                    className="px-3 py-1 text-sm text-gray-700 transition-colors rounded-md hover:text-white hover:bg-red-500"
+                    className="px-3 py-1 text-sm text-gray-600 transition-all rounded-md hover:bg-red-50 hover:text-red-600"
                   >
                     Remove
                   </button>
@@ -238,7 +242,7 @@ export default function PdfToWord() {
                   {!isProcessing && !isComplete && (
                     <button
                       onClick={processFile}
-                      className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#42A5F5] to-[#1E88E5] hover:opacity-90 hover:scale-[1.02]"
+                      className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.02]"
                     >
                       <File className="w-5 h-5" />
                       Convert to Word
@@ -248,7 +252,7 @@ export default function PdfToWord() {
                   {isProcessing && (
                     <button
                       disabled
-                      className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-blue-300 rounded-lg cursor-not-allowed"
+                      className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-[#9FA8DA] rounded-lg cursor-not-allowed"
                     >
                       <Loader2 className="w-5 h-5 animate-spin" />
                       Converting...
@@ -259,14 +263,14 @@ export default function PdfToWord() {
                     <div className="flex flex-col gap-4 sm:flex-row">
                       <button
                         onClick={downloadFile}
-                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#43A047] to-[#2E7D32] hover:opacity-90 hover:scale-[1.02]"
+                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.02]"
                       >
                         <Download className="w-5 h-5" />
                         Download Word
                       </button>
                       <button
                         onClick={resetTool}
-                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-gray-400 to-gray-600 hover:opacity-90"
+                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gray-500 hover:bg-gray-600"
                       >
                         Convert Another
                       </button>
@@ -279,8 +283,12 @@ export default function PdfToWord() {
         </div>
       </main>
 
+      <div className="w-full py-4 bg-white">
+        <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" className="w-full" />
+      </div>
+
      <div className="mt-10 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
-  <h2 className="text-xl font-semibold text-[#3F51B5] mb-2">
+  <h2 className="text-xl font-semibold text-black mb-2">
     Convert PDF to Word – Editable, Accurate & Free
   </h2>
   <p>
@@ -289,7 +297,7 @@ export default function PdfToWord() {
     <br className="hidden sm:block" />
     No signup, no watermarks, and 100% secure file handling.
   </p>
-  <p className="mt-2 text-gray-600">
+  <p className="mt-2 text-black">
     Viadocs makes it easy to transform reports, resumes, and scanned PDFs into editable Word files anytime.
   </p>
 </div>
@@ -300,7 +308,7 @@ export default function PdfToWord() {
     © 2025 <span className="text-[#1EC6D7] font-semibold">Viadocs</span>. All rights reserved.
   </div>
 </footer>
-<div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+
 
     </div>
   );

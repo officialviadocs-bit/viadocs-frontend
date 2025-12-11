@@ -1083,11 +1083,11 @@ if (id && (isLoading || !showEditor)) {
       <Header />
       <div className="flex flex-col items-center justify-center flex-1">
         <div className="relative flex items-center justify-center w-20 h-20 mb-6">
-          {/* Blue rotating ring */}
-          <div className="absolute w-20 h-20 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+          {/* Neutral rotating ring */}
+          <div className="absolute w-20 h-20 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
 
-          {/* Soft blue glow */}
-          <div className="absolute w-10 h-10 bg-blue-500/20 rounded-full animate-pulse"></div>
+          {/* Soft neutral glow */}
+          <div className="absolute w-10 h-10 bg-black/20 rounded-full animate-pulse"></div>
         </div>
 
         <p className="text-lg font-semibold text-gray-700 animate-fadeIn">
@@ -1096,7 +1096,7 @@ if (id && (isLoading || !showEditor)) {
       </div>
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">
   <div className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-white font-medium tracking-wide">
-    © 2025 <span className="text-[#1EC6D7] font-semibold">Viadocs</span>. All rights reserved.
+    © 2025 <span className="text-white font-semibold">Viadocs</span>. All rights reserved.
   </div>
 </footer>
 
@@ -1116,12 +1116,12 @@ if (id && (isLoading || !showEditor)) {
 // 📝 If no ID (creating new doc) → show document name asking page
 if (!id && !showEditor) {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="min-h-screen bg-white">
       <Header />
       <div className="flex items-center justify-center min-h-[80vh] px-4">
         <div className="w-full max-w-md p-8 bg-white border border-gray-200 shadow-xl rounded-2xl">
           <div className="mb-6 text-center">
-            <FileText className="w-12 h-12 mx-auto mb-4 text-purple-600" />
+            <FileText className="w-12 h-12 mx-auto mb-4 text-black" />
             <h2 className="text-2xl font-bold text-gray-900">Enter your Document Name :</h2>
           </div>
 
@@ -1135,7 +1135,7 @@ if (!id && !showEditor) {
                   setErrorMessage("");
                 }}
                 placeholder="PROJECT - 1"
-                className={`w-full px-4 py-3 text-lg text-center border rounded-lg focus:ring-2 focus:ring-purple-500 ${
+                className={`w-full px-4 py-3 text-lg text-center border rounded-lg focus:ring-2 focus:ring-black ${
                   errorMessage ? "border-red-500" : "border-gray-300"
                 }`}
                 autoFocus
@@ -1146,7 +1146,7 @@ if (!id && !showEditor) {
 
             <button
               onClick={createDocument}
-              className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold py-3 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-200 transform hover:scale-[1.02]"
+              className="w-full bg-black text-white font-semibold py-3 px-6 rounded-lg hover:bg-gray-800 transition-all duration-200 transform hover:scale-[1.02]"
             >
               NEXT
             </button>
@@ -1162,7 +1162,7 @@ if (!id && !showEditor) {
       </div>
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">
   <div className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-white font-medium tracking-wide">
-    © 2025 <span className="text-[#1EC6D7] font-semibold">Viadocs</span>. All rights reserved.
+    © 2025 <span className="text-white font-semibold">Viadocs</span>. All rights reserved.
   </div>
 </footer>
     </div>
@@ -1551,7 +1551,7 @@ if (!id && !showEditor) {
                       }}
                       className={`w-5 h-5 border cursor-pointer ${
                         gridSize.rows >= r && gridSize.cols >= c
-                          ? "bg-blue-500"
+                          ? "bg-black"
                           : "bg-gray-100 hover:bg-gray-200"
                       }`}
                     />
@@ -1599,7 +1599,7 @@ if (!id && !showEditor) {
                 setShowLinkMenu(false); // ✅ close after inserting
                 setActiveDropdown(null);
               }}
-              className="w-full py-1 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+              className="w-full py-1 text-sm text-white bg-black rounded hover:bg-gray-800"
             >
               Insert Link
             </button>
@@ -1714,7 +1714,7 @@ if (!id && !showEditor) {
           setActiveDropdown(null);
         }}
         className={`flex items-center w-full px-3 py-2 hover:bg-gray-50 ${
-          activeFormats.bold ? "bg-purple-100 font-semibold" : ""
+          activeFormats.bold ? "bg-gray-100 font-semibold" : ""
         }`}
       >
         <Bold className="w-4 h-4 mr-2" /> Bold
@@ -1727,7 +1727,7 @@ if (!id && !showEditor) {
           setActiveDropdown(null);
         }}
         className={`flex items-center w-full px-3 py-2 hover:bg-gray-50 ${
-          activeFormats.italic ? "bg-purple-100 font-semibold" : ""
+          activeFormats.italic ? "bg-gray-100 font-semibold" : ""
         }`}
       >
         <Italic className="w-4 h-4 mr-2" /> Italic
@@ -1740,7 +1740,7 @@ if (!id && !showEditor) {
           setActiveDropdown(null);
         }}
         className={`flex items-center w-full px-3 py-2 hover:bg-gray-50 ${
-          activeFormats.underline ? "bg-purple-100 font-semibold" : ""
+          activeFormats.underline ? "bg-gray-100 font-semibold" : ""
         }`}
       >
         <Underline className="w-4 h-4 mr-2" /> Underline
@@ -1753,7 +1753,7 @@ if (!id && !showEditor) {
           setActiveDropdown(null);
         }}
         className={`flex items-center w-full px-3 py-2 hover:bg-gray-50 ${
-          activeFormats.strikeThrough ? "bg-purple-100 font-semibold" : ""
+          activeFormats.strikeThrough ? "bg-gray-100 font-semibold" : ""
         }`}
       >
         <Strikethrough className="w-4 h-4 mr-2" /> Strikethrough
@@ -1895,9 +1895,9 @@ if (!id && !showEditor) {
               
               <div className="hidden w-px h-6 mx-2 bg-gray-300 sm:block"></div>
               
-<select
+  <select
   onChange={(e) => formatHeading(e.target.value)}
-  className="hidden sm:inline-block border border-gray-300 rounded px-2 py-1 text-sm min-w-[140px] focus:ring-2 focus:ring-purple-500"
+  className="hidden sm:inline-block border border-gray-300 rounded px-2 py-1 text-sm min-w-[140px] focus:ring-2 focus:ring-black"
 >
   <option value="p">Normal text</option>
   <option value="1">Heading 1</option>
@@ -1946,7 +1946,7 @@ if (!id && !showEditor) {
       bold: !prev.bold, // instantly toggle state
     }));
   }}
-  className={`p-1 rounded ${activeFormats.bold ? "bg-purple-200" : "hover:bg-gray-100"}`}
+  className={`p-1 rounded ${activeFormats.bold ? "bg-gray-200" : "hover:bg-gray-100"}`}
   title="Bold (Ctrl+B)"
 >
   <Bold className="w-4 h-4" />
@@ -1961,7 +1961,7 @@ if (!id && !showEditor) {
       italic: !prev.italic,
     }));
   }}
-  className={`p-1 rounded ${activeFormats.italic ? "bg-purple-200" : "hover:bg-gray-100"}`}
+  className={`p-1 rounded ${activeFormats.italic ? "bg-gray-200" : "hover:bg-gray-100"}`}
   title="Italic (Ctrl+I)"
 >
   <Italic className="w-4 h-4" />
@@ -1976,7 +1976,7 @@ if (!id && !showEditor) {
       underline: !prev.underline,
     }));
   }}
-  className={`p-1 rounded ${activeFormats.underline ? "bg-purple-200" : "hover:bg-gray-100"}`}
+  className={`p-1 rounded ${activeFormats.underline ? "bg_gray-200" : "hover:bg-gray-100"}`}
   title="Underline (Ctrl+U)"
 >
   <Underline className="w-4 h-4" />
@@ -2030,7 +2030,7 @@ if (!id && !showEditor) {
       />
       <button
         onClick={insertLink}
-        className="w-full py-1 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+        className="w-full py-1 text-sm text-white bg-black rounded hover:bg-gray-800"
       >
         Insert Link
       </button>
@@ -2103,7 +2103,7 @@ if (!id && !showEditor) {
       />
       <button
         onClick={insertImageFromUrl}   // ✅ use helper function
-        className="w-full py-1 mb-2 text-sm text-white bg-blue-500 rounded hover:bg-blue-600"
+        className="w-full py-1 mb-2 text-sm text-white bg-black rounded hover:bg-gray-800"
       >
         Insert from URL
       </button>
@@ -2194,7 +2194,7 @@ if (!id && !showEditor) {
   ref={editorRef}
   contentEditable={isEditMode}
   suppressContentEditableWarning={true}
-  className={`editor prose prose-purple outline-none ${isMobile ? 'min-h-[400px] p-4' : 'min-h-[800px]'}`}
+  className={`editor prose outline-none ${isMobile ? 'min-h-[400px] p-4' : 'min-h-[800px]'}`}
   style={{
     fontFamily: fontFamily,
     fontSize: `${fontSize}px`,
@@ -2228,7 +2228,7 @@ if (!id && !showEditor) {
       
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">
   <div className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-white font-medium tracking-wide">
-    © 2025 <span className="text-[#1EC6D7] font-semibold">Viadocs</span>. All rights reserved.
+    © 2025 <span className="text-white font-semibold">Viadocs</span>. All rights reserved.
   </div>
 </footer>
      
@@ -2499,7 +2499,7 @@ if (!id && !showEditor) {
         </button>
         <button
           onClick={createNewDocument}
-          className="px-4 py-2 text-white bg-purple-600 rounded hover:bg-purple-700"
+          className="px-4 py-2 text-white bg-black rounded hover:bg-gray-800"
         >
           Create
         </button>
@@ -2543,7 +2543,7 @@ if (!id && !showEditor) {
           <button
             type="submit"
             disabled={isRenaming}
-            className="px-4 py-2 text-white bg-purple-600 rounded hover:bg-purple-700 disabled:opacity-60"
+            className="px-4 py-2 text-white bg-black rounded hover:bg-gray-800 disabled:opacity-60"
           >
             {isRenaming ? "Renaming..." : "Rename"}
           </button>

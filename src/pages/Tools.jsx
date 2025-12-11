@@ -60,16 +60,16 @@ export default function Tools() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF]">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
       
-      <main className="flex-1 px-0 sm:px-6 pb-16 pt-20 sm:pt-28 bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF]">
+      <main className="flex-1 px-0 sm:px-6 pb-16 pt-20 sm:pt-28 bg-white">
         <div className="mx-auto max-w-7xl px-3 sm:px-0">
          {/* Back Button */}
                              <div className="flex justify-start mb-8">
                                <button
                                  onClick={() => navigate("/home")}
-                                 className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.03]"
+                                 className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
                                >
                                  <ArrowLeft size={18} />
                                  <span className="text-sm font-medium sm:text-base">
@@ -82,7 +82,7 @@ export default function Tools() {
           <div className="mb-10 text-center">
             <h2 className="text-3xl font-extrabold text-gray-900">
               All Your PDF Tools —{" "}
-              <span className="text-[#4066E0]">Smart, Fast & Free!</span>
+              <span className="text-black">Smart, Fast & Free!</span>
             </h2>
             <p className="max-w-3xl mx-auto mt-3 text-lg text-gray-600">
               Merge, split, compress, edit, convert, and secure your PDFs effortlessly.
@@ -96,10 +96,10 @@ export default function Tools() {
               <button
                 key={i}
                 onClick={() => navigate(`/tools/${tool.slug}`)}
-                className="relative flex flex-col items-center justify-center p-3 sm:p-6 text-center bg-white border border-[#1EC6D7]/30 rounded-xl shadow-sm hover:shadow-xl hover:border-[#4066E0]/40 hover:bg-[#EAF6FF] hover:scale-[1.02] transition-all group min-h-[135px] sm:min-h-[160px] w-full"
+                className="relative flex flex-col items-center justify-center p-3 sm:p-6 text-center bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-xl hover:border-black hover:bg-gray-50 hover:scale-[1.02] transition-all group min-h-[135px] sm:min-h-[160px] w-full"
               >
-                <div className="flex items-center justify-center w-10 h-10 mb-2 rounded-lg bg-[#EAF6FF] group-hover:bg-white/80">
-                  <tool.icon className="w-5 h-5 sm:w-6 sm:h-6 text-[#4066E0] group-hover:text-[#1EC6D7] transition-colors" />
+                <div className="flex items-center justify-center w-10 h-10 mb-2 rounded-lg bg-gray-100 group-hover:bg-gray-200">
+                  <tool.icon className="w-5 h-5 sm:w-6 sm:h-6 text-black group-hover:text-black transition-colors" />
                 </div>
                 <h3 className="mb-1 text-xs font-medium text-gray-800 sm:text-sm line-clamp-1 px-0.5">
                   {tool.name}
@@ -117,9 +117,9 @@ export default function Tools() {
       <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
      
 {/* ===== Viadocs Features Section ===== */}
-<section className="py-16 bg-gradient-to-b from-[#F9FAFB] via-[#F3F4F6] to-white text-center">
+<section className="py-16 bg-white border-t border-gray-200 text-center">
   <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
-    Work Smarter with <span className="text-[#4066E0]">Viadocs</span>
+    Work Smarter with <span className="text-black">Viadocs</span>
   </h2>
 
   <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg mb-10 px-4">
@@ -132,7 +132,7 @@ export default function Tools() {
     {/* Card 1 */}
     <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
       <div className="flex items-center justify-center mb-4">
-        <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+        <div className="p-3 rounded-xl bg-gray-100 shadow-inner">
           <img
             src={image1}
             alt="Create Documents"
@@ -153,7 +153,7 @@ export default function Tools() {
     {/* Card 2 */}
     <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
       <div className="flex items-center justify-center mb-4">
-        <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+        <div className="p-3 rounded-xl bg-gray-100 shadow-inner">
           <img
             src={image2}
             alt="PDF Tools"
@@ -174,7 +174,7 @@ export default function Tools() {
     {/* Card 3 */}
     <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
       <div className="flex items-center justify-center mb-4">
-        <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+        <div className="p-3 rounded-xl bg-gray-100 shadow-inner">
           <img
             src={image3}
             alt="AI Assistant"
@@ -195,9 +195,9 @@ export default function Tools() {
 </section>
 
      {/* ===== Premium Section ===== */}
-<section className="py-16 bg-gradient-to-r from-[#4066E0]/10 via-[#1EC6D7]/10 to-[#6A3FD7]/10 text-center rounded-t-3xl mt-10">
+<section className="py-16 bg-white text-center rounded-t-3xl mt-10">
   <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
-    Unlock More with <span className="text-[#4066E0]">Viadocs Premium</span>
+    Unlock More with <span className="text-black">Viadocs Premium</span>
   </h2>
 
   <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg mb-8 px-4">
@@ -209,14 +209,14 @@ export default function Tools() {
   <div className="relative inline-block group">
     <button
       disabled
-      className="px-6 py-3 font-semibold rounded-full bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] text-white shadow-md opacity-90 cursor-not-allowed group-hover:opacity-100 transition-all"
+      className="px-6 py-3 font-semibold rounded-full bg-black text-white shadow-md opacity-90 cursor-not-allowed group-hover:opacity-100 transition-all"
     >
-      Go Premium 🚀
+      Go Premium 
     </button>
 
     {/* Tooltip */}
     <div className="absolute left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm text-white bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
-      Coming Soon ✨
+      Coming Soon 
     </div>
   </div>
 </section>
@@ -227,17 +227,17 @@ export default function Tools() {
           Built for Engineering Students & Employees
         </h2>
         <p className="max-w-2xl mx-auto text-gray-600 mb-10 px-4">
-          I’m a fresher who built <span className="text-[#4066E0] font-semibold">Viadocs</span> 
+          I'm a fresher who built <span className="text-black font-semibold">Viadocs</span>
           for engineering students and professionals — making document creation, editing, 
           and PDF tools smarter and easier to use.
         </p>
       </section>
 
     {/* ===== Why Use Viadocs Tools Section ===== */}
-<section className="py-16 bg-gradient-to-b from-white via-[#F9FAFB] to-[#EEF2FF] text-center border-t border-gray-100">
+<section className="py-16 bg-white text-center border-t border-gray-200">
   <div className="max-w-5xl mx-auto px-6">
     <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
-      Why Use <span className="text-[#4066E0]">Viadocs PDF Tools</span>?
+      Why Use <span className="text-black">Viadocs PDF Tools</span>?
     </h2>
     <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
       Viadocs offers a seamless experience for document handling — whether you’re converting, merging,
@@ -247,42 +247,42 @@ export default function Tools() {
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
       <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-        <h4 className="text-lg font-semibold text-[#4066E0] mb-2">⚡ Instant Conversions</h4>
+        <h4 className="text-lg font-semibold text-black mb-2"> Instant Conversions</h4>
         <p className="text-gray-600 text-sm">
           Convert Word, Excel, PowerPoint, and images into PDFs instantly — without losing formatting.
         </p>
       </div>
 
       <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-        <h4 className="text-lg font-semibold text-[#4066E0] mb-2">🔒 Safe and Secure</h4>
+        <h4 className="text-lg font-semibold text-black mb-2"> Safe and Secure</h4>
         <p className="text-gray-600 text-sm">
           Your files remain private and encrypted. We never store or share your documents.
         </p>
       </div>
 
       <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-        <h4 className="text-lg font-semibold text-[#4066E0] mb-2">💡 AI-Powered Features</h4>
+        <h4 className="text-lg font-semibold text-black mb-2"> AI-Powered Features</h4>
         <p className="text-gray-600 text-sm">
           Let our AI assistant summarize reports, extract data, or auto-format content with precision.
         </p>
       </div>
 
       <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-        <h4 className="text-lg font-semibold text-[#4066E0] mb-2">🌍 Works on All Devices</h4>
+        <h4 className="text-lg font-semibold text-black mb-2"> Works on All Devices</h4>
         <p className="text-gray-600 text-sm">
           Access Viadocs tools anywhere — desktop, tablet, or mobile. 100% browser-based.
         </p>
       </div>
 
       <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-        <h4 className="text-lg font-semibold text-[#4066E0] mb-2">🚀 Built for Students & Teams</h4>
+        <h4 className="text-lg font-semibold text-black mb-2"> Built for Students & Teams</h4>
         <p className="text-gray-600 text-sm">
           Specially crafted for academic and corporate use — simplify project reports and documentation.
         </p>
       </div>
 
       <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-        <h4 className="text-lg font-semibold text-[#4066E0] mb-2">🧠 Free Forever Plan</h4>
+        <h4 className="text-lg font-semibold text-black mb-2"> Free Forever Plan</h4>
         <p className="text-gray-600 text-sm">
           Start with all essential tools for free — no sign-up required for most PDF functions.
         </p>

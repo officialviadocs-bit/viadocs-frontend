@@ -101,7 +101,7 @@ export default function Feedback() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF] text-gray-800">
+    <div className="flex flex-col min-h-screen bg-white text-gray-800">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -110,7 +110,7 @@ export default function Feedback() {
           <div className="flex justify-start mb-8">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:opacity-90 hover:scale-[1.03]"
+              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
             >
               <ArrowLeft size={18} />
               <span className="text-sm font-medium sm:text-base">Back</span>
@@ -118,13 +118,13 @@ export default function Feedback() {
           </div>
 
           {/* Feedback Card */}
-          <div className="p-8 border border-[#1EC6D7]/30 shadow-xl bg-white/80 backdrop-blur-md rounded-2xl hover:shadow-2xl transition-all">
-            <h1 className="text-3xl font-extrabold text-center text-[#4066E0] sm:text-4xl">
-              Share Your <span className="text-[#1EC6D7]">Feedback</span>
+          <div className="p-8 border border-gray-200 shadow-xl bg-white rounded-2xl hover:shadow-2xl transition-all">
+            <h1 className="text-3xl font-extrabold text-center text-black sm:text-4xl">
+              Share Your <span className="text-black">Feedback</span>
             </h1>
             <p className="max-w-lg mx-auto mt-3 text-center text-gray-600">
               Your thoughts matter! Help us make{" "}
-              <span className="text-[#4066E0] font-semibold">Viadocs</span> smarter,
+              <span className="text-black font-semibold">Viadocs</span> smarter,
               faster, and more user-friendly.
             </p>
 
@@ -138,25 +138,25 @@ export default function Feedback() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                    <User className="w-4 h-4 text-[#4066E0]" /> Your Name
+                    <User className="w-4 h-4 text-black" /> Your Name
                   </label>
                   <input
                     type="text"
                     value={user.name || "Guest User"}
                     disabled
-                    className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border border-[#1EC6D7]/40 rounded-lg shadow-sm"
+                    className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg shadow-sm"
                   />
                 </div>
 
                 <div>
                   <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                    <User className="w-4 h-4 text-[#4066E0]" /> Email
+                    <User className="w-4 h-4 text-black" /> Email
                   </label>
                   <input
                     type="email"
                     value={user.email || "Not logged in"}
                     disabled
-                    className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border border-[#1EC6D7]/40 rounded-lg shadow-sm"
+                    className="w-full px-4 py-3 mt-2 text-gray-800 bg-gray-100 border border-gray-300 rounded-lg shadow-sm\"
                   />
                 </div>
               </div>
@@ -171,7 +171,7 @@ export default function Feedback() {
                   value={feedback.rating}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 mt-2 text-gray-800 bg-white border border-[#1EC6D7]/40 rounded-lg shadow-sm focus:ring-2 focus:ring-[#4066E0]"
+                  className="w-full px-4 py-3 mt-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black"
                 >
                   <option value="">Select a rating</option>
                   <option value="5">⭐⭐⭐⭐⭐ Excellent</option>
@@ -185,7 +185,7 @@ export default function Feedback() {
               {/* Message */}
               <div>
                 <label className="flex items-center gap-2 text-sm font-medium text-gray-700">
-                  <MessageSquare className="w-4 h-4 text-[#4066E0]" /> Feedback Message
+                  <MessageSquare className="w-4 h-4 text-black" /> Feedback Message
                 </label>
                 <textarea
                   name="message"
@@ -194,7 +194,7 @@ export default function Feedback() {
                   required
                   rows={5}
                   placeholder="Tell us what you think about Viadocs, or suggest a new feature..."
-                  className="w-full px-4 py-3 mt-2 text-gray-800 bg-white border border-[#1EC6D7]/40 rounded-lg shadow-sm resize-none focus:ring-2 focus:ring-[#4066E0]"
+                  className="w-full px-4 py-3 mt-2 text-gray-800 bg-white border border-gray-300 rounded-lg shadow-sm resize-none focus:ring-2 focus:ring-black"
                 ></textarea>
               </div>
 
@@ -202,7 +202,7 @@ export default function Feedback() {
               <button
                 type="submit"
                 disabled={loading}
-                className="flex items-center justify-center w-full py-3 font-semibold text-white transition-all rounded-full shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:scale-[1.02] hover:shadow-lg disabled:opacity-60"
+                className="flex items-center justify-center w-full py-3 font-semibold text-white transition-all rounded-full shadow-md bg-black hover:scale-[1.02] hover:shadow-lg disabled:opacity-60"
               >
                 {loading ? (
                   "Submitting..."
@@ -229,14 +229,14 @@ export default function Feedback() {
           </div>
 
           {/* Why Feedback Matters */}
-          <div className="p-8 mt-12 border border-[#1EC6D7]/30 rounded-2xl bg-gradient-to-br from-[#EAF6FF]/60 to-[#E4E1FF]/60 shadow-md">
-            <Smile className="w-10 h-10 mx-auto text-[#4066E0] mb-4" />
-            <h2 className="text-2xl font-semibold text-center text-[#4066E0]">
-              Why Your Feedback Matters 💡
+          <div className="p-8 mt-12 border border-gray-200 rounded-2xl bg-white shadow-md">
+            <Smile className="w-10 h-10 mx-auto text-black mb-4" />
+            <h2 className="text-2xl font-semibold text-center text-black">
+              Why Your Feedback Matters 
             </h2>
             <p className="max-w-3xl mx-auto mt-3 text-gray-600 text-center leading-relaxed">
               Every suggestion helps us improve{" "}
-              <strong className="text-[#1EC6D7]">Viadocs</strong> and build
+              <strong className="text-black">Viadocs</strong> and build
               features that truly matter to our users.  
               Your feedback directly shapes the way we design, develop, and
               deliver smarter document tools powered by Artificial Intelligence.
@@ -244,11 +244,11 @@ export default function Feedback() {
           </div>
 
           {/* Community Impact */}
-          <div className="p-8 mt-10 border border-[#1EC6D7]/20 rounded-2xl bg-white shadow-sm">
+          <div className="p-8 mt-10 border border-gray-200 rounded-2xl bg-white shadow-sm">
             <div className="flex flex-col items-center space-y-3">
-              <ChartLine className="w-10 h-10 text-[#6A3FD7]" />
-              <h3 className="text-xl font-bold text-[#4066E0]">
-                Your Voice Drives Innovation 🚀
+              <ChartLine className="w-10 h-10 text-black" />
+              <h3 className="text-xl font-bold text-black">
+                Your Voice Drives Innovation 
               </h3>
               <p className="max-w-2xl text-sm text-gray-600 text-center">
                 From design enhancements to AI integration, each feedback entry
@@ -257,7 +257,7 @@ export default function Feedback() {
                 user-focused. Together, we’re building the future of
                 document management.
               </p>
-              <HeartHandshake className="w-6 h-6 text-[#1EC6D7]" />
+              <HeartHandshake className="w-6 h-6 text-black" />
               <p className="text-xs text-gray-500 italic text-center">
                 “Your voice builds better tools — your trust fuels our innovation.”
               </p>
@@ -265,10 +265,10 @@ export default function Feedback() {
           </div>
 
           {/* Transparency & Privacy */}
-          <div className="p-6 mt-10 text-center border border-[#1EC6D7]/20 rounded-xl bg-gradient-to-br from-[#EAF6FF]/50 to-[#EAE4FF]/50">
-            <ShieldCheck className="w-8 h-8 mx-auto mb-3 text-[#4066E0]" />
-            <h3 className="text-lg font-semibold text-[#4066E0] mb-2">
-              Feedback & Data Transparency 🔒
+          <div className="p-6 mt-10 text-center border border-gray-200 rounded-xl bg-white">
+            <ShieldCheck className="w-8 h-8 mx-auto mb-3 text-black" />
+            <h3 className="text-lg font-semibold text-black mb-2">
+              Feedback & Data Transparency 
             </h3>
             <p className="max-w-2xl mx-auto text-gray-600 text-sm">
               All feedback is securely processed and stored under{" "}
@@ -276,7 +276,7 @@ export default function Feedback() {
               We never share your information with third parties.  
               Learn more in our{" "}
               <span
-                className="text-[#4066E0] hover:underline cursor-pointer font-medium"
+                className="text-black hover:underline cursor-pointer font-medium"
                 onClick={() => navigate("/privacy-policy")}
               >
                 Privacy Policy
@@ -286,7 +286,7 @@ export default function Feedback() {
 
           {/* Closing Statement */}
           <div className="mt-16 text-center">
-            <h2 className="text-2xl font-bold text-[#4066E0]">
+            <h2 className="text-2xl font-bold text-black">
               “Your Feedback Fuels Innovation — Together, We Build Smarter.”
             </h2>
             <p className="mt-2 text-gray-600 text-sm">

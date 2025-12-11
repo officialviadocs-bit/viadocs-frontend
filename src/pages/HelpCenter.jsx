@@ -67,7 +67,7 @@ export default function HelpCenter() {
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF] text-gray-800">
+    <div className="flex flex-col min-h-screen bg-white text-gray-800">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -76,7 +76,7 @@ export default function HelpCenter() {
           <div className="flex justify-start mb-8">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:opacity-90 hover:scale-[1.03]"
+              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
             >
               <ArrowLeft size={18} />
               <span className="text-sm font-medium sm:text-base">Back</span>
@@ -85,9 +85,9 @@ export default function HelpCenter() {
 
           {/* Header Section */}
           <div className="mb-10 text-center">
-            <HelpCircle className="w-12 h-12 mx-auto mb-4 text-[#4066E0]" />
-            <h1 className="text-3xl font-extrabold text-[#4066E0] sm:text-4xl">
-              Help <span className="text-[#1EC6D7]">Center</span>
+            <HelpCircle className="w-12 h-12 mx-auto mb-4 text-black" />
+            <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
+              Help <span className="text-black">Center</span>
             </h1>
             <p className="max-w-2xl mx-auto mt-3 text-gray-600">
               Need assistance? Explore FAQs, tutorials, and guidance to help
@@ -99,7 +99,7 @@ export default function HelpCenter() {
           <div className="flex justify-center mb-12">
             <div className="relative w-full max-w-lg">
               <Search
-                className="absolute text-[#4066E0] left-3 top-3"
+                className="absolute text-black left-3 top-3"
                 size={20}
               />
               <input
@@ -107,7 +107,7 @@ export default function HelpCenter() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search help topics — e.g. 'PDF', 'Login', 'AI Tools'"
-                className="w-full py-3 pl-10 pr-4 bg-white border border-[#1EC6D7]/40 rounded-lg shadow-sm focus:ring-2 focus:ring-[#4066E0] focus:border-transparent"
+                className="w-full py-3 pl-10 pr-4 bg-white border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-black focus:border-transparent"
               />
             </div>
           </div>
@@ -118,7 +118,7 @@ export default function HelpCenter() {
               filteredFaqs.map((faq, i) => (
                 <div
                   key={i}
-                  className="transition-all border border-[#1EC6D7]/30 shadow-md bg-white/80 backdrop-blur-md rounded-xl hover:shadow-lg"
+                  className="transition-all border border-gray-200 shadow-md bg-white rounded-xl hover:shadow-lg"
                 >
                   <button
                     onClick={() => setOpenIndex(openIndex === i ? null : i)}
@@ -128,13 +128,13 @@ export default function HelpCenter() {
                       {faq.q}
                     </h3>
                     {openIndex === i ? (
-                      <ChevronUp className="text-[#4066E0]" />
+                      <ChevronUp className="text-black" />
                     ) : (
-                      <ChevronDown className="text-[#4066E0]" />
+                      <ChevronDown className="text-black" />
                     )}
                   </button>
                   {openIndex === i && (
-                    <div className="px-5 pb-4 text-gray-700 border-t border-[#1EC6D7]/30">
+                    <div className="px-5 pb-4 text-gray-700 border-t border-gray-200">
                       {faq.a}
                     </div>
                   )}
@@ -154,9 +154,9 @@ export default function HelpCenter() {
 
           {/* Knowledge Section */}
           <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="p-6 border border-[#1EC6D7]/30 bg-[#EAF6FF]/70 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-              <BookOpen className="w-8 h-8 mx-auto mb-3 text-[#4066E0]" />
-              <h3 className="font-semibold text-[#4066E0] mb-2">
+            <div className="p-6 border border-gray-200 bg-white rounded-xl shadow-sm hover:shadow-md transition-all text-center">
+              <BookOpen className="w-8 h-8 mx-auto mb-3 text-black" />
+              <h3 className="font-semibold text-black mb-2">
                 Getting Started
               </h3>
               <p className="text-sm text-gray-600">
@@ -164,9 +164,9 @@ export default function HelpCenter() {
                 our quick start tutorials.
               </p>
             </div>
-            <div className="p-6 border border-[#1EC6D7]/30 bg-[#EAF6FF]/70 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-              <Lightbulb className="w-8 h-8 mx-auto mb-3 text-[#1EC6D7]" />
-              <h3 className="font-semibold text-[#4066E0] mb-2">
+            <div className="p-6 border border-gray-200 bg-white rounded-xl shadow-sm hover:shadow-md transition-all text-center">
+              <Lightbulb className="w-8 h-8 mx-auto mb-3 text-black" />
+              <h3 className="font-semibold text-black mb-2">
                 Tips & Tricks
               </h3>
               <p className="text-sm text-gray-600">
@@ -174,9 +174,9 @@ export default function HelpCenter() {
                 practices for seamless document work.
               </p>
             </div>
-            <div className="p-6 border border-[#1EC6D7]/30 bg-[#EAF6FF]/70 rounded-xl shadow-sm hover:shadow-md transition-all text-center">
-              <ShieldCheck className="w-8 h-8 mx-auto mb-3 text-[#6A3FD7]" />
-              <h3 className="font-semibold text-[#4066E0] mb-2">
+            <div className="p-6 border border-gray-200 bg-white rounded-xl shadow-sm hover:shadow-md transition-all text-center">
+              <ShieldCheck className="w-8 h-8 mx-auto mb-3 text-black" />
+              <h3 className="font-semibold text-black mb-2">
                 Account & Security
               </h3>
               <p className="text-sm text-gray-600">
@@ -187,9 +187,9 @@ export default function HelpCenter() {
           </div>
 
           {/* Contact Support */}
-          <div className="p-10 mt-16 text-center border border-[#1EC6D7]/30 shadow-xl bg-white/80 rounded-2xl backdrop-blur-md hover:shadow-2xl transition-all">
-            <h2 className="text-2xl font-bold text-[#4066E0] mb-2">
-              Still Need Help? 💬
+          <div className="p-10 mt-16 text-center border border-gray-200 shadow-xl bg-white rounded-2xl hover:shadow-2xl transition-all">
+            <h2 className="text-2xl font-bold text-black mb-2">
+              Still Need Help? 
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Can’t find what you’re looking for? Our support team is available
@@ -197,7 +197,7 @@ export default function HelpCenter() {
             </p>
             <button
               onClick={() => navigate("/contact")}
-              className="inline-flex items-center gap-2 px-6 py-3 mt-5 font-medium text-white transition-transform rounded-full bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:scale-[1.05] hover:shadow-lg"
+              className="inline-flex items-center gap-2 px-6 py-3 mt-5 font-medium text-white transition-transform rounded-full bg-black hover:scale-[1.05] hover:shadow-lg hover:bg-gray-800"
             >
               <MessageCircle size={18} />
               Contact Support
@@ -205,9 +205,9 @@ export default function HelpCenter() {
           </div>
 
           {/* Transparency & SEO Section */}
-          <div className="p-8 mt-12 text-center border border-[#1EC6D7]/20 rounded-xl bg-gradient-to-br from-[#EAF6FF]/60 to-[#EAE4FF]/60">
-            <ShieldCheck className="w-10 h-10 mx-auto mb-3 text-[#4066E0]" />
-            <h3 className="text-xl font-semibold text-[#4066E0] mb-3">
+          <div className="p-8 mt-12 text-center border border-gray-200 rounded-xl bg-white">
+            <ShieldCheck className="w-10 h-10 mx-auto mb-3 text-black" />
+            <h3 className="text-xl font-semibold text-black mb-3">
               Transparency, Security & AdSense Compliance
             </h3>
             <p className="max-w-3xl mx-auto text-gray-600 text-sm leading-relaxed">
@@ -217,7 +217,7 @@ export default function HelpCenter() {
               For details about cookies, analytics, and advertising partners,
               please visit our{" "}
               <span
-                className="text-[#4066E0] hover:underline cursor-pointer"
+                className="text-black hover:underline cursor-pointer\"
                 onClick={() => navigate("/privacy-policy")}
               >
                 Privacy Policy
@@ -228,11 +228,11 @@ export default function HelpCenter() {
 
           {/* Closing Line */}
           <div className="mt-14 text-center">
-            <h2 className="text-2xl font-bold text-[#4066E0]">
+            <h2 className="text-2xl font-bold text-black\">
               “Empowering Productivity Through Knowledge — The Viadocs Way.”
             </h2>
             <p className="mt-2 text-sm text-gray-600">
-              Your curiosity drives our innovation. Explore. Learn. Create. 🚀
+              Your curiosity drives our innovation. Explore. Learn. Create. 
             </p>
           </div>
         </div>

@@ -145,7 +145,7 @@ export default function ExcelToPdf() {
   return (
     <div
       ref={pageRef}
-      className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF4FC] via-[#E1EDFB] to-[#CFE3FA]"
+      className="flex flex-col min-h-screen bg-white text-black"
     >
       <Header />
 
@@ -156,7 +156,7 @@ export default function ExcelToPdf() {
           <div className="flex justify-start mb-8">
             <button
               onClick={() => navigate("/tools")}
-              className="flex items-center gap-2 px-4 py-2 text-white rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.03]"
+              className="flex items-center gap-2 px-4 py-2 text-white rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
             >
               <ArrowLeft size={18} />
               <span className="text-sm font-medium sm:text-base">
@@ -167,10 +167,10 @@ export default function ExcelToPdf() {
 
           {/* Header */}
           <div className="mb-8 text-center">
-            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#4FC3F7]/30 to-[#3F51B5]/20">
-              <FileSpreadsheet className="w-10 h-10 sm:w-12 sm:h-12 text-[#3F51B5]" />
+            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-white border border-gray-200">
+              <FileSpreadsheet className="w-10 h-10 sm:w-12 sm:h-12 text-black" />
             </div>
-            <h1 className="mb-2 text-3xl font-bold text-[#1E3A8A] sm:text-4xl">
+            <h1 className="mb-2 text-3xl font-bold text-black sm:text-4xl">
               Excel to PDF Converter
             </h1>
             <p className="text-base text-gray-600 sm:text-lg">
@@ -184,11 +184,11 @@ export default function ExcelToPdf() {
               <div
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
-                className="p-10 sm:p-12 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-[#3F51B5] hover:bg-[#E3F2FD]/40"
+                className="p-10 sm:p-12 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-black hover:bg-black/5"
                 onClick={() => fileInputRef.current?.click()}
               >
-                <Upload className="w-12 h-12 mx-auto mb-4 text-[#3F51B5]" />
-                <h3 className="mb-2 text-xl font-semibold text-gray-700">
+                <Upload className="w-12 h-12 mx-auto mb-4 text-black" />
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Drop your Excel file here
                 </h3>
                 <p className="mb-4 text-sm text-gray-500 sm:text-base">
@@ -209,10 +209,10 @@ export default function ExcelToPdf() {
             ) : (
               <div className="space-y-6">
                 {/* File Info */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 p-4 rounded-lg bg-[#F5F7FB]">
-                  <FileSpreadsheet className="w-8 h-8 text-[#3F51B5]" />
+                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 p-4 rounded-lg bg-gray-50">
+                  <FileSpreadsheet className="w-8 h-8 text-black" />
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900 break-all">
+                    <h3 className="font-semibold text-black break-all">
                       {file.name}
                     </h3>
                     <p className="text-sm text-gray-500">
@@ -221,7 +221,7 @@ export default function ExcelToPdf() {
                   </div>
                   <button
                     onClick={resetTool}
-                    className="px-3 py-1 text-sm text-gray-600 transition-all rounded-md hover:bg-red-50 hover:text-red-600"
+                    className="px-3 py-1 text-sm text-gray-600 transition-all rounded-md hover:bg-gray-100 hover:text-gray-800"
                   >
                     Remove
                   </button>
@@ -252,7 +252,7 @@ export default function ExcelToPdf() {
                   {!isProcessing && !isComplete && (
                     <button
                       onClick={processFile}
-                      className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 font-medium text-white rounded-lg shadow-md transition-all bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:scale-[1.02]"
+                      className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 font-medium text-white rounded-lg shadow-md transition-all bg-black hover:bg-gray-800 hover:scale-[1.02]"
                     >
                       <FileSpreadsheet className="w-5 h-5" />
                       Convert to PDF
@@ -262,7 +262,7 @@ export default function ExcelToPdf() {
                   {isProcessing && (
                     <button
                       disabled
-                      className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 font-medium text-white bg-[#9FA8DA] rounded-lg cursor-not-allowed"
+                      className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 font-medium text-white bg-gray-400 rounded-lg cursor-not-allowed"
                     >
                       <Loader2 className="w-5 h-5 animate-spin" />
                       Converting...
@@ -273,14 +273,14 @@ export default function ExcelToPdf() {
                     <div className="flex flex-col items-center w-full gap-4 sm:flex-row sm:w-auto">
                       <button
                         onClick={downloadFile}
-                        className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 font-medium text-white rounded-lg shadow-md transition-all bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:scale-[1.02]"
+                        className="flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 font-medium text-white rounded-lg shadow-md transition-all bg-black hover:bg-gray-800 hover:scale-[1.02]"
                       >
                         <Download className="w-5 h-5" />
                         Download PDF
                       </button>
                       <button
                         onClick={resetTool}
-                        className="flex items-center justify-center w-full gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md sm:w-auto bg-gradient-to-r from-gray-400 to-gray-600 hover:opacity-90"
+                        className="flex items-center justify-center w-full gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md sm:w-auto bg-gray-500 hover:bg-gray-600"
                       >
                         Convert Another
                       </button>
@@ -298,7 +298,9 @@ export default function ExcelToPdf() {
 </p>
 
       {/* Ad container required by the vendor script (page-local) */}
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+      <div className="w-full py-4 bg-white">
+        <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" className="w-full" />
+      </div>
 
       {/* Visible, colored, page-local footer */}
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">

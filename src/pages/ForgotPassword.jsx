@@ -186,24 +186,24 @@ export default function ForgotPassword() {
   return (
     <>
       <ToastContainer position="top-right" autoClose={2000} />
-      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-[#E3F2FD] to-[#E8EAF6] p-6">
+      <div className="flex items-center justify-center min-h-screen bg-white p-6">
         <div className="w-full max-w-md p-8 bg-white rounded-2xl shadow-xl transition-all duration-300">
           {/* 🔙 Back Button */}
           <button
             onClick={() => navigate("/login")}
-            className="flex items-center gap-2 text-sm text-[#3F51B5] mb-6 hover:text-[#1E88E5]"
+            className="flex items-center gap-2 text-sm text-black mb-6 hover:text-gray-700"
           >
             <ArrowLeft size={18} /> Back
           </button>
 
-          <h2 className="text-2xl font-bold text-center text-[#1E88E5] mb-4">
+          <h2 className="text-2xl font-bold text-center text-black mb-4">
             Forgot Password
           </h2>
 
           {/* ✅ STEP 1 - Email */}
           {step === 1 && (
             <form onSubmit={handleSendOtp}>
-              <div className="flex items-center border-b border-gray-300 mb-4 focus-within:border-[#3F51B5]">
+              <div className="flex items-center border-b border-gray-300 mb-4 focus-within:border-black\">
                 <Mail className="mr-3 text-gray-500" />
                 <input
                   type="email"
@@ -246,7 +246,7 @@ export default function ForgotPassword() {
                 disabled={loading || emailStatus !== "exists"}
                 className={`w-full py-3 text-white rounded-full transition-all ${
                   emailStatus === "exists"
-                    ? "bg-gradient-to-r from-[#3F51B5] to-[#1E88E5] hover:opacity-90"
+                    ? "bg-black hover:bg-gray-800"
                     : "bg-gray-400 cursor-not-allowed"
                 }`}
               >
@@ -258,7 +258,7 @@ export default function ForgotPassword() {
           {/* ✅ STEP 2 - OTP */}
           {step === 2 && (
             <form onSubmit={handleVerifyOtp}>
-              <div className="flex items-center border-b border-gray-300 mb-4 focus-within:border-[#3F51B5]">
+              <div className="flex items-center border-b border-gray-300 mb-4 focus-within:border-black\">
                 <KeyRound className="mr-3 text-gray-500" />
                 <input
                   type="text"
@@ -292,7 +292,7 @@ export default function ForgotPassword() {
                   type="button"
                   onClick={handleSendOtp}
                   disabled={loading}
-                  className="block mx-auto text-sm text-[#3F51B5] hover:text-[#1E88E5] mb-3"
+                  className="block mx-auto text-sm text-black hover:text-gray-800 mb-3"
                 >
                   Resend OTP
                 </button>
@@ -301,7 +301,7 @@ export default function ForgotPassword() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 text-white rounded-full bg-gradient-to-r from-[#3F51B5] to-[#1E88E5] hover:opacity-90"
+                className="w-full py-3 text-white rounded-full bg-black hover:bg-gray-800\"
               >
                 {loading ? "Verifying..." : "Verify OTP"}
               </button>
@@ -311,7 +311,7 @@ export default function ForgotPassword() {
           {/* ✅ STEP 3 - Reset Password */}
           {step === 3 && (
             <form onSubmit={handleResetPassword}>
-              <div className="flex items-center border-b border-gray-300 mb-4 focus-within:border-[#3F51B5]">
+              <div className="flex items-center border-b border-gray-300 mb-4 focus-within:border-black\">
                 <Lock className="mr-3 text-gray-500" />
                 <input
                   type={showPassword ? "text" : "password"}
@@ -330,7 +330,7 @@ export default function ForgotPassword() {
                 </button>
               </div>
 
-              <div className="flex items-center border-b border-gray-300 mb-6 focus-within:border-[#3F51B5]">
+              <div className="flex items-center border-b border-gray-300 mb-6 focus-within:border-black">
                 <Lock className="mr-3 text-gray-500" />
                 <input
                   type={showPassword ? "text" : "password"}
@@ -345,7 +345,7 @@ export default function ForgotPassword() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 text-white rounded-full bg-gradient-to-r from-[#3F51B5] to-[#1E88E5] hover:opacity-90"
+                className="w-full py-3 text-white rounded-full bg-black hover:bg-gray-800\"
               >
                 {loading ? "Resetting..." : "Reset Password"}
               </button>

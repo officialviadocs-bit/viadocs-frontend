@@ -27,7 +27,7 @@ export default function Terms() {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF] text-gray-800">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -36,7 +36,7 @@ export default function Terms() {
           <div className="flex justify-start mb-8">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:opacity-90 hover:scale-[1.03] active:scale-[0.97]"
+              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03] active:scale-[0.97]"
             >
               <ArrowLeft size={18} />
               <span className="text-sm font-medium sm:text-base">Back</span>
@@ -45,27 +45,22 @@ export default function Terms() {
 
           {/* Title Section */}
           <div className="mb-10 text-center">
-            <div className="flex justify-center mb-4">
-              <Scale className="w-12 h-12 text-[#4066E0]" />
-            </div>
-            <h1 className="text-3xl font-extrabold text-[#4066E0] sm:text-4xl">
-              Terms <span className="text-[#1EC6D7]">& Conditions</span> 
+            <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
+              Terms <span className="text-black">& Conditions</span>
             </h1>
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 text-black">
               Last Updated:{" "}
-              <span className="font-semibold text-[#4066E0]">
-                October 2025
-              </span>
+              <span className="font-semibold text-black">October 2025</span>
             </p>
           </div>
 
           {/* Terms Content */}
-          <div className="p-8 bg-white border border-[#1EC6D7]/30 shadow-lg rounded-2xl backdrop-blur-sm">
-            <section className="space-y-10 leading-relaxed text-gray-700 text-sm sm:text-base">
+          <div className="p-8 bg-white border border-gray-200 shadow-lg rounded-2xl">
+            <section className="space-y-10 leading-relaxed text-black text-sm sm:text-base">
               
               {/* 1. Introduction */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   1. Introduction
                 </h2>
                 <p>
@@ -78,7 +73,7 @@ export default function Terms() {
 
               {/* 2. Acceptance of Terms */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   2. Acceptance of Terms 
                 </h2>
                 <p>
@@ -86,7 +81,7 @@ export default function Terms() {
                   that you have read and agreed to these Terms and our{" "}
                   <span
                     onClick={() => navigate("/privacy-policy")}
-                    className="text-[#1EC6D7] font-medium hover:underline cursor-pointer"
+                    className="text-black font-medium hover:underline cursor-pointer"
                   >
                     Privacy Policy
                   </span>.  
@@ -96,7 +91,7 @@ export default function Terms() {
 
               {/* 3. Eligibility */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   3. Eligibility
                 </h2>
                 <p>
@@ -108,7 +103,7 @@ export default function Terms() {
 
               {/* 4. User Accounts */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   4. User Accounts 
                 </h2>
                 <p>
@@ -121,7 +116,7 @@ export default function Terms() {
 
               {/* 5. Use of Services */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   5. Acceptable Use of Services 
                 </h2>
                 <p>
@@ -138,7 +133,7 @@ export default function Terms() {
 
               {/* 6. Intellectual Property Rights */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   6. Intellectual Property Rights 
                 </h2>
                 <p>
@@ -151,7 +146,7 @@ export default function Terms() {
 
               {/* 7. Third-Party Links */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   7. Third-Party Links & Integrations 
                 </h2>
                 <p>
@@ -164,7 +159,7 @@ export default function Terms() {
 
               {/* 8. Advertisements & AdSense */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   8. Advertisements & Google AdSense 
                 </h2>
                 <p>
@@ -177,7 +172,7 @@ export default function Terms() {
                     href="https://policies.google.com/technologies/ads"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     Google’s Advertising Policy
                   </a>.
@@ -186,7 +181,7 @@ export default function Terms() {
 
               {/* 9. Disclaimer of Warranties */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   9. Disclaimer of Warranties 
                 </h2>
                 <p>
@@ -199,7 +194,7 @@ export default function Terms() {
 
               {/* 10. Limitation of Liability */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   10. Limitation of Liability 
                 </h2>
                 <p>
@@ -212,14 +207,14 @@ export default function Terms() {
 
               {/* 11. Data & Privacy */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   11. Data & Privacy Protection 
                 </h2>
                 <p>
                   Your privacy is protected in accordance with our{" "}
                   <span
                     onClick={() => navigate("/privacy-policy")}
-                    className="text-[#1EC6D7] hover:underline cursor-pointer font-medium"
+                    className="text-black hover:underline cursor-pointer font-medium"
                   >
                     Privacy Policy
                   </span>.  
@@ -230,7 +225,7 @@ export default function Terms() {
 
               {/* 12. Termination of Access */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   12. Account Termination & Suspension 
                 </h2>
                 <p>
@@ -239,7 +234,7 @@ export default function Terms() {
                   You may request permanent account deletion by emailing{" "}
                   <a
                     href="mailto:official@wwi.org.in"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     official@wwi.org.in
                   </a>.
@@ -248,7 +243,7 @@ export default function Terms() {
 
               {/* 13. Governing Law */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   13. Governing Law & Jurisdiction 
                 </h2>
                 <p>
@@ -260,7 +255,7 @@ export default function Terms() {
 
               {/* 14. Updates to Terms */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   14. Updates & Modifications 
                 </h2>
                 <p>
@@ -272,7 +267,7 @@ export default function Terms() {
 
               {/* 15. Contact Us */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   15. Contact Us 
                 </h2>
                 <p>
@@ -283,7 +278,7 @@ export default function Terms() {
                   <strong>Email:</strong>{" "}
                   <a
                     href="mailto:official@wwi.org.in"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     official@wwi.org.in
                   </a>
@@ -293,7 +288,7 @@ export default function Terms() {
                     href="https://wwi.org.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     www.wwi.org.in
                   </a>
@@ -306,10 +301,10 @@ export default function Terms() {
 
           {/* Tagline */}
           <div className="mt-12 text-center">
-            <h2 className="text-2xl font-bold text-[#4066E0]">
+            <h2 className="text-2xl font-bold text-black">
               “Empowering Secure & Smart Workflows — Powered by Work Wizards Innovations.”
             </h2>
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-black">
               Trusted, Transparent, and Technology-driven for a better digital world.
             </p>
           </div>

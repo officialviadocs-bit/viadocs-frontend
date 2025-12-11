@@ -174,7 +174,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-b from-[#EAF4FC] to-[#CFE3FA]">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-white">
       <ToastContainer
         position="top-right"
         autoClose={2000}
@@ -198,10 +198,10 @@ const Signup = () => {
 
         {/* Right Section - Form */}
         <div className="flex flex-col justify-center flex-1 p-6 md:p-10">
-          <h2 className="mb-2 text-3xl font-bold text-[#304FFE] sm:text-4xl">
+          <h2 className="mb-2 text-3xl font-bold text-black sm:text-4xl">
             Create Account
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-gray-800">
             Join <strong>ViaDocs</strong> and start building smarter!
           </p>
 
@@ -215,10 +215,10 @@ const Signup = () => {
                 value={formData.username}
                 onChange={handleChange}
                 className={`w-full px-3 py-2 border-b-2 outline-none transition-all ${
-                  usernameError
-                    ? "border-red-500"
-                    : "border-gray-300 focus:border-[#3F51B5]"
-                }`}
+                    usernameError
+                      ? "border-red-500"
+                      : "border-gray-300 focus:border-black"
+                  }`}
                 required
               />
               {usernameError && (
@@ -234,7 +234,7 @@ const Signup = () => {
                 placeholder="First Name"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-[#3F51B5]"
+                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-black"
                 required
               />
               <input
@@ -243,7 +243,7 @@ const Signup = () => {
                 placeholder="Last Name"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-[#3F51B5]"
+                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-black"
                 required
               />
             </div>
@@ -258,7 +258,7 @@ const Signup = () => {
               className={`w-full px-3 py-2 border-b-2 outline-none transition-all ${
                 emailError
                   ? "border-red-500"
-                  : "border-gray-300 focus:border-[#3F51B5]"
+                  : "border-gray-300 focus:border-black"
               }`}
               required
             />
@@ -267,7 +267,7 @@ const Signup = () => {
             )}
 
             {/* Password */}
-            <div className="relative flex items-center border-b-2 border-gray-300 focus-within:border-[#3F51B5]">
+              <div className="relative flex items-center border-b-2 border-gray-300 focus-within:border-black">
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
@@ -279,7 +279,7 @@ const Signup = () => {
                 minLength={6}
               />
               <span
-                className="text-[#3F51B5] cursor-pointer hover:text-[#1E88E5]"
+                className="text-black cursor-pointer hover:text-gray-700"
                 onClick={togglePassword}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -287,7 +287,7 @@ const Signup = () => {
             </div>
 
             {/* Confirm Password */}
-            <div className="relative flex items-center border-b-2 border-gray-300 focus-within:border-[#3F51B5]">
+              <div className="relative flex items-center border-b-2 border-gray-300 focus-within:border-black">
               <input
                 type={showConfirmPassword ? "text" : "password"}
                 name="confirmPassword"
@@ -298,7 +298,7 @@ const Signup = () => {
                 required
               />
               <span
-                className="text-[#3F51B5] cursor-pointer hover:text-[#1E88E5]"
+                className="text-black cursor-pointer hover:text-gray-700"
                 onClick={toggleConfirmPassword}
               >
                 {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
@@ -312,14 +312,14 @@ const Signup = () => {
                 name="dateOfBirth"
                 value={formData.dateOfBirth}
                 onChange={handleChange}
-                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-[#3F51B5]"
+                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-black"
                 required
               />
               <select
                 name="gender"
                 value={formData.gender}
                 onChange={handleChange}
-                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-[#3F51B5]"
+                className="flex-1 px-3 py-2 border-b-2 border-gray-300 outline-none focus:border-black"
                 required
               >
                 <option value="male">Male</option>
@@ -348,7 +348,7 @@ const Signup = () => {
                   placeholder="Enter referral code"
                   value={formData.referred_by}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 mt-2 border-b-2 border-gray-300 outline-none focus:border-[#3F51B5]"
+                  className="w-full px-3 py-2 mt-2 border-b-2 border-gray-300 outline-none focus:border-black"
                 />
               )}
               {showReferral && referralError && (
@@ -362,7 +362,7 @@ const Signup = () => {
               disabled={!isFormValid || loading}
               className={`w-full py-3 font-semibold text-white transition-all rounded-full shadow-md ${
                 isFormValid
-                  ? "bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90"
+                  ? "bg-black hover:bg-gray-800"
                   : "bg-gray-300 cursor-not-allowed"
               }`}
             >
@@ -374,7 +374,7 @@ const Signup = () => {
             Already have an account?{" "}
             <span
               onClick={() => navigate("/login")}
-              className="font-semibold cursor-pointer text-[#1E88E5] hover:underline"
+              className="font-semibold cursor-pointer text-black hover:underline"
             >
               Log in
             </span>

@@ -27,7 +27,7 @@ export default function PrivacyPolicy() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF] text-gray-800">
+    <div className="flex flex-col min-h-screen bg-white text-black w-full">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -36,7 +36,7 @@ export default function PrivacyPolicy() {
           <div className="flex justify-start mb-8">
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:opacity-90 hover:scale-[1.03] active:scale-[0.97]"
+              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03] active:scale-[0.97]"
             >
               <ArrowLeft size={18} />
               <span className="text-sm font-medium sm:text-base">Back</span>
@@ -45,23 +45,23 @@ export default function PrivacyPolicy() {
 
           {/* Title */}
           <div className="mb-10 text-center">
-            <ShieldCheck className="w-12 h-12 mx-auto mb-3 text-[#4066E0]" />
-            <h1 className="text-3xl font-extrabold text-[#4066E0] sm:text-4xl">
-              Privacy <span className="text-[#1EC6D7]">Policy</span> 🔒
+            <ShieldCheck className="w-12 h-12 mx-auto mb-3 text-black" />
+            <h1 className="text-3xl font-extrabold text-black sm:text-4xl">
+              Privacy <span className="text-black">Policy</span>
             </h1>
             <p className="mt-3 text-gray-600">
               Last Updated:{" "}
-              <span className="font-semibold text-[#4066E0]">October 2025</span>
+              <span className="font-semibold text-black">October 2025</span>
             </p>
           </div>
 
           {/* Policy Content */}
-          <div className="p-8 bg-white border border-[#1EC6D7]/30 shadow-lg rounded-2xl backdrop-blur-sm">
-            <section className="space-y-10 leading-relaxed text-gray-700 text-sm sm:text-base">
+          <div className="p-8 bg-white border border-gray-200 shadow-lg rounded-2xl">
+            <section className="space-y-10 leading-relaxed text-black text-sm sm:text-base">
               
               {/* 1. Introduction */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   1. Introduction
                 </h2>
                 <p>
@@ -77,24 +77,24 @@ export default function PrivacyPolicy() {
 
               {/* 2. Information We Collect */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   2. Information We Collect
                 </h2>
                 <ul className="space-y-2 list-disc list-inside">
                   <li>
-                    <strong className="text-[#1EC6D7]">Personal Data:</strong>{" "}
+                    <strong className="text-black">Personal Data:</strong>{" "}
                     Includes your name, email address, date of birth, and any
                     information you voluntarily provide during registration or
                     while using Viadocs.
                   </li>
                   <li>
-                    <strong className="text-[#1EC6D7]">Usage Data:</strong>{" "}
+                    <strong className="text-black">Usage Data:</strong>{" "}
                     We collect anonymous analytics such as device type, browser,
                     pages visited, time spent, IP address, and referral source
                     to improve user experience.
                   </li>
                   <li>
-                    <strong className="text-[#1EC6D7]">Documents & Files:</strong>{" "}
+                    <strong className="text-black">Documents & Files:</strong>{" "}
                     Files created, uploaded, or edited within Viadocs are securely
                     stored. We do not access, share, or sell your content.
                   </li>
@@ -103,7 +103,7 @@ export default function PrivacyPolicy() {
 
               {/* 3. How We Use Information */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   3. How We Use Your Information
                 </h2>
                 <ul className="space-y-2 list-disc list-inside">
@@ -117,7 +117,7 @@ export default function PrivacyPolicy() {
 
               {/* 4. Data Sharing */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
+                <h2 className="mb-2 text-2xl font-semibold text-black">
                   4. Data Sharing and Disclosure
                 </h2>
                 <p>
@@ -131,8 +131,8 @@ export default function PrivacyPolicy() {
 
               {/* 5. Cookies */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  5. Cookies and Tracking Technologies 🍪
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  5. Cookies and Tracking Technologies 
                 </h2>
                 <p>
                   We use cookies to improve website functionality and personalize
@@ -145,8 +145,8 @@ export default function PrivacyPolicy() {
 
               {/* 6. Google AdSense & Analytics */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  6. Google AdSense and Analytics Integration 📊
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  6. Google AdSense and Analytics Integration 
                 </h2>
                 <p>
                   We use <strong>Google AdSense</strong> to display relevant,
@@ -159,7 +159,7 @@ export default function PrivacyPolicy() {
                     href="https://policies.google.com/technologies/ads"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     policies.google.com/technologies/ads
                   </a>.
@@ -172,8 +172,8 @@ export default function PrivacyPolicy() {
 
               {/* 7. Data Protection & Security */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  7. Data Protection and Security 🔐
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  7. Data Protection and Security 
                 </h2>
                 <p>
                   We apply encryption (SSL), access control, and secure databases to
@@ -185,15 +185,15 @@ export default function PrivacyPolicy() {
 
               {/* 8. Your Rights */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  8. Your Rights and Choices 🧾
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  8. Your Rights and Choices 
                 </h2>
                 <p>
                   You have the right to access, modify, or delete your personal
                   information. You can request data removal or export by emailing{" "}
                   <a
                     href="mailto:official@wwi.org.in"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     official@wwi.org.in
                   </a>.  
@@ -203,8 +203,8 @@ export default function PrivacyPolicy() {
 
               {/* 9. Compliance and Age Policy */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  9. Compliance and Age Restrictions ⚖️
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  9. Compliance and Age Restrictions 
                 </h2>
                 <p>
                   Viadocs complies with applicable laws including{" "}
@@ -218,8 +218,8 @@ export default function PrivacyPolicy() {
 
               {/* 10. Updates to Policy */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  10. Updates to This Policy 🔁
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  10. Updates to This Policy 
                 </h2>
                 <p>
                   This Privacy Policy may be updated periodically. We encourage you
@@ -231,8 +231,8 @@ export default function PrivacyPolicy() {
 
               {/* 11. Contact */}
               <div>
-                <h2 className="mb-2 text-2xl font-semibold text-[#4066E0]">
-                  11. Contact Us 📩
+                <h2 className="mb-2 text-2xl font-semibold text-black">
+                  11. Contact Us 
                 </h2>
                 <p>
                   If you have any questions, concerns, or feedback regarding our
@@ -242,7 +242,7 @@ export default function PrivacyPolicy() {
                   <strong>Email:</strong>{" "}
                   <a
                     href="mailto:official@wwi.org.in"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     official@wwi.org.in
                   </a>
@@ -252,7 +252,7 @@ export default function PrivacyPolicy() {
                     href="https://wwi.org.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#1EC6D7] hover:underline"
+                    className="text-black hover:underline"
                   >
                     www.wwi.org.in
                   </a>

@@ -56,7 +56,7 @@ setTimeout(() => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen p-4 bg-gradient-to-b from-[#EAF4FC] to-[#CFE3FA]">
+    <div className="flex items-center justify-center min-h-screen p-4 bg-white">
       <ToastContainer position="top-right" autoClose={2000} hideProgressBar={false} />
 
       <div className="flex flex-col w-full max-w-4xl overflow-hidden bg-white shadow-xl md:flex-row rounded-2xl">
@@ -72,40 +72,40 @@ setTimeout(() => {
 
         {/* Right Section - Login Form */}
         <div className="flex flex-col justify-center flex-1 p-6 md:p-10">
-          <h2 className="mb-6 text-2xl font-bold text-[#304FFE] sm:text-3xl">
+          <h2 className="mb-6 text-2xl font-bold text-black sm:text-3xl">
             Welcome Back
           </h2>
-          <p className="mb-6 text-gray-600">Sign in to your account</p>
+          <p className="mb-6 text-gray-700">Sign in to your account</p>
 
           <form onSubmit={handleLogin} className="space-y-6">
             {/* Email */}
-            <div className="flex items-center border-b-2 border-gray-300 focus-within:border-[#3F51B5]">
-              <User className="mr-3 text-[#3F51B5]" size={20} />
+            <div className="flex items-center border-b-2 border-gray-300 focus-within:border-black">
+              <User className="mr-3 text-black" size={20} />
               <input
                 type="email"
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full py-3 text-gray-700 bg-transparent outline-none"
+                className="w-full py-3 text-black bg-transparent outline-none"
               />
             </div>
 
             {/* Password */}
-            <div className="flex items-center border-b-2 border-gray-300 focus-within:border-[#3F51B5]">
-              <Lock className="mr-3 text-[#3F51B5]" size={20} />
+            <div className="flex items-center border-b-2 border-gray-300 focus-within:border-black">
+              <Lock className="mr-3 text-black" size={20} />
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="w-full py-3 text-gray-700 bg-transparent outline-none"
+                className="w-full py-3 text-black bg-transparent outline-none"
               />
               <button
                 type="button"
                 onClick={togglePassword}
-                className="text-[#3F51B5] hover:text-[#1E88E5]"
+                className="text-black hover:text-gray-700"
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </button>
@@ -114,7 +114,7 @@ setTimeout(() => {
             {/* Forgot Password */}
             <div
               onClick={() => navigate("/forgot-password")}
-              className="text-sm text-right text-[#3F51B5] cursor-pointer hover:text-[#1E88E5]"
+              className="text-sm text-right text-black cursor-pointer hover:text-gray-700"
             >
               Forgot Password?
             </div>
@@ -123,7 +123,7 @@ setTimeout(() => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3 font-medium text-white transition rounded-full bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 disabled:opacity-50"
+              className="w-full py-3 font-medium text-white transition rounded-full bg-black hover:bg-gray-800 disabled:opacity-50"
             >
               {loading ? "Signing in..." : "Sign In"}
             </button>
@@ -134,7 +134,7 @@ setTimeout(() => {
             Don’t have an account?{" "}
             <Link
               to="/signup"
-              className="font-semibold text-[#1E88E5] hover:underline"
+              className="font-semibold text-black hover:underline"
             >
               Sign up
             </Link>

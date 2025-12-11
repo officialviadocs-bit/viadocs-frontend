@@ -69,7 +69,7 @@ const AnimatedText = () => {
         {longestText}
       </h2>
       <h2 className="absolute top-0 left-0 text-2xl font-extrabold leading-snug text-gray-900 whitespace-pre-line lg:text-3xl">
-  <span className="text-[#4066E0]">{displayedText}</span>
+  <span className="text-black">{displayedText}</span>
 </h2>
 
     </div>
@@ -342,7 +342,7 @@ export default function Home() {
 
   return (
     // Outer wrapper is full width so background and footer span the entire viewport
-    <div ref={docsContainerRef} className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF] w-full">
+    <div ref={docsContainerRef} className="flex flex-col min-h-screen bg-white w-full">
       {/* make this a flex column and allow it to grow so `main.flex-1` can push footer to bottom */}
       <div className="flex flex-col flex-1 w-full">
         <Header />
@@ -350,9 +350,9 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto">
           {/* Welcome Section */}
-          <div className="p-8 mb-10 text-center bg-white border border-[#1EC6D7]/30 shadow-lg rounded-2xl">
+          <div className="p-8 mb-10 text-center bg-white border border-gray-200 shadow-lg rounded-2xl">
             <h2 className="text-3xl font-extrabold text-gray-900">
-              Welcome to <span className="text-[#4066E0]">Viadocs</span>
+              Welcome to <span className="text-black">Viadocs</span>
             </h2>
             <p className="mt-3 text-lg text-gray-600">
               Create professional documents, collaborate with your team, and
@@ -363,13 +363,13 @@ export default function Home() {
               <div className="flex flex-col items-center justify-center gap-3 mt-8 sm:flex-row sm:gap-6">
                 <button
                   onClick={() => navigate("/login")}
-                  className="px-5 py-2 text-sm font-medium text-white transition-all rounded-full shadow-md bg-[#4066E0] hover:bg-[#1EC6D7] hover:shadow-lg sm:px-6 sm:py-2 sm:text-base"
+                  className="px-5 py-2 text-sm font-medium text-white transition-all rounded-full shadow-md bg-black hover:bg-gray-800 hover:shadow-lg sm:px-6 sm:py-2 sm:text-base"
                 >
                   Get Started - Login
                 </button>
                 <button
                   onClick={() => navigate("/signup")}
-                  className="px-5 py-2 text-sm font-medium text-[#4066E0] transition-all border border-[#1EC6D7] rounded-full shadow-sm hover:bg-[#1EC6D7]/10 hover:text-[#1EC6D7] hover:shadow-md sm:px-6 sm:py-2 sm:text-base"
+                  className="px-5 py-2 text-sm font-medium text-black transition-all border border-gray-300 rounded-full bg-white shadow-sm hover:bg-black hover:text-white hover:shadow-md sm:px-6 sm:py-2 sm:text-base"
                 >
                   Create Account
                 </button>
@@ -380,33 +380,33 @@ export default function Home() {
           
 
           {/* ===== Compact Hero Section ===== */}
-<section className="relative p-8 sm:p-12 mb-10 text-center rounded-2xl shadow-lg bg-gradient-to-br from-[#F3F8FF] via-[#EAF6FF] to-[#ffffff] border border-[#E0ECFF] overflow-hidden">
+          <section className="relative p-8 sm:p-12 mb-10 text-center rounded-2xl shadow-lg bg-white border border-[#E0ECFF] overflow-hidden">
   {/* Floating accent gradient circles */}
-  <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#4066E0]/20 rounded-full blur-3xl animate-pulse-slow"></div>
-  <div className="absolute -bottom-10 -right-10 w-52 h-52 bg-[#1EC6D7]/20 rounded-full blur-3xl animate-pulse-slow delay-200"></div>
+  <div className="absolute -top-10 -left-10 w-40 h-40 bg-gray-100/40 rounded-full blur-3xl animate-pulse-slow"></div>
+  <div className="absolute -bottom-10 -right-10 w-52 h-52 bg-gray-100/40 rounded-full blur-3xl animate-pulse-slow delay-200"></div>
 
   <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center justify-center">
     <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-3 leading-tight">
-      Simplify Your <span className="text-[#1EC6D7]">Document Work</span>
+      Simplify Your <span className="text-black">Document Work</span>
     </h1>
 
     <p className="max-w-xl text-sm sm:text-base text-gray-600 mb-6 px-4">
       Convert, Edit, Merge, and Protect PDFs — all in one
-      <span className="text-[#4066E0] font-semibold"> AI-powered workspace</span>.
+      <span className="text-black font-semibold"> AI-powered workspace</span>.
     </p>
 
     {/* Action Buttons */}
     <div className="flex flex-wrap justify-center gap-3">
       <button
         onClick={() => navigate("/tools")}
-        className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-white bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:scale-105 hover:shadow-md transition-all text-sm sm:text-base font-medium"
+        className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full text-white bg-black hover:bg-gray-800 hover:scale-105 hover:shadow-md transition-all text-sm sm:text-base font-medium"
       >
         Try Tools
       </button>
 
       <button
         onClick={() => navigate("/about")}
-        className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full border border-[#1EC6D7] text-[#1EC6D7] hover:bg-[#1EC6D7]/10 hover:scale-105 transition-all text-sm sm:text-base font-medium"
+        className="px-5 py-2 sm:px-6 sm:py-2.5 rounded-full border border-gray-300 text-black bg-white hover:bg-black hover:text-white hover:scale-105 transition-all text-sm sm:text-base font-medium"
       >
         Learn More
       </button>
@@ -425,15 +425,15 @@ export default function Home() {
 
           {/* Top Section */}
           <div className="grid grid-cols-1 gap-6 mb-12 lg:grid-cols-2">
-            <div className="flex gap-4 p-6 bg-white border border-[#1EC6D7]/30 shadow-md rounded-2xl">
-              <div
+            <div className="flex gap-4 p-6 bg-white border border-gray-200 shadow-md rounded-2xl">
+                <div
                 onClick={() => handleNav("/create-doc")}
-                className="flex flex-col items-center justify-center flex-1 p-8 transition-all duration-300 border-2 border-dashed cursor-pointer rounded-xl border-[#1EC6D7]/40 hover:border-[#4066E0] hover:bg-[#EAF6FF] hover:shadow-xl group"
+                className="flex flex-col items-center justify-center flex-1 p-8 transition-all duration-300 border-2 border-dashed cursor-pointer rounded-xl border-gray-200 hover:border-white hover:bg-gray-900 hover:text-white group group-hover:bg-gray-900 group-hover:text-white group-hover:border-white active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
               >
-                <div className="flex items-center justify-center w-20 h-20 mb-4 transition-colors rounded-full bg-[#EAF6FF] group-hover:bg-[#1EC6D7]/20">
-                  <Plus strokeWidth={3} className="w-10 h-10 text-[#4066E0]" />
+                <div className="flex items-center justify-center w-20 h-20 mb-4 transition-colors duration-200 rounded-full bg-gray-50 group-hover:bg-white hover:bg-white">
+                  <Plus strokeWidth={3} className="w-10 h-10 text-black group-hover:text-black hover:text-black transition-colors duration-200" />
                 </div>
-                <p className="text-lg font-semibold text-gray-900 group-hover:text-[#4066E0]">
+                <p className="text-lg font-semibold text-gray-900 group-hover:text-white hover:text-white transition-colors duration-200">
                   Create a Doc
                 </p>
               </div>
@@ -441,20 +441,20 @@ export default function Home() {
               <div className="flex flex-col w-1/2 gap-4">
                 <div
                   onClick={() => handleNav("/favorites")}
-                  className="flex flex-col items-center justify-center flex-1 p-4 transition-all duration-300 border cursor-pointer rounded-xl border-[#1EC6D7]/30 hover:border-[#4066E0] hover:bg-[#EAF6FF] hover:shadow-lg group"
+                  className="flex flex-col items-center justify-center flex-1 p-4 transition-all duration-300 border cursor-pointer rounded-xl border-gray-200 hover:border-white hover:bg-gray-900 hover:text-white group group-hover:bg-gray-900 group-hover:text-white group-hover:border-white active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
                 >
-                  <Bookmark strokeWidth={3} className="mb-2 w-7 h-7 text-[#4066E0]" />
-                  <p className="text-sm font-semibold text-gray-900 group-hover:text-[#4066E0]">
+                  <Bookmark strokeWidth={3} className="mb-2 w-7 h-7 text-black group-hover:text-white hover:text-white transition-colors duration-200" />
+                  <p className="text-sm font-semibold text-gray-900 group-hover:text-white hover:text-white transition-colors duration-200">
                     Favorites
                   </p>
                 </div>
 
                 <div
                   onClick={() => handleNav("/tools")}
-                  className="flex flex-col items-center justify-center flex-1 p-4 transition-all duration-300 border cursor-pointer rounded-xl border-[#1EC6D7]/30 hover:border-[#4066E0] hover:bg-[#EAF6FF] hover:shadow-lg group"
+                  className="flex flex-col items-center justify-center flex-1 p-4 transition-all duration-300 border cursor-pointer rounded-xl border-gray-200 hover:border-white hover:bg-gray-900 hover:text-white group group-hover:bg-gray-900 group-hover:text-white group-hover:border-white active:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-black"
                 >
-                  <FileCog strokeWidth={3} className="mb-2 w-7 h-7 text-[#4066E0]" />
-                  <p className="text-sm font-semibold text-gray-900 group-hover:text-[#4066E0]">
+                  <FileCog strokeWidth={3} className="mb-2 w-7 h-7 text-black group-hover:text-white hover:text-white transition-colors duration-200" />
+                  <p className="text-sm font-semibold text-gray-900 group-hover:text-white hover:text-white transition-colors duration-200">
                     Tools
                   </p>
                 </div>
@@ -462,18 +462,18 @@ export default function Home() {
             </div>
 
             {/* AI Section */}
-            <div
-              className="relative p-8 overflow-hidden border shadow-lg bg-gradient-to-br from-[#4066E0]/10 via-[#1EC6D7]/5 to-[#EAF6FF] border-[#1EC6D7]/30 rounded-2xl min-h-[240px] flex flex-col justify-between group cursor-pointer hover:shadow-2xl transition-all"
-              onClick={() => handleNav("/DocAI")}
-            >
+              <div
+                className="relative p-8 overflow-hidden border shadow-lg bg-white border-gray-200 rounded-2xl min-h-[240px] flex flex-col justify-between group cursor-pointer hover:shadow-2xl transition-all"
+                onClick={() => handleNav("/DocAI")}
+              >
               <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute w-32 h-32 rounded-full bg-[#4066E0]/10 blur-2xl animate-float top-10 left-10"></div>
-                <div className="absolute w-40 h-40 rounded-full bg-[#1EC6D7]/10 blur-3xl animate-float-delayed bottom-10 right-10"></div>
-                <div className="absolute w-24 h-24 rounded-full bg-[#6A3FD7]/10 blur-xl animate-float-slow top-20 right-20"></div>
+                <div className="absolute w-32 h-32 rounded-full bg-gray-100/30 blur-2xl animate-float top-10 left-10"></div>
+                <div className="absolute w-40 h-40 rounded-full bg-gray-100/30 blur-3xl animate-float-delayed bottom-10 right-10"></div>
+                <div className="absolute w-24 h-24 rounded-full bg-gray-100/20 blur-xl animate-float-slow top-20 right-20"></div>
               </div>
 
-              <div className="absolute z-20 flex flex-col items-center top-4 right-4">
-                <Bot className="w-12 h-12 text-[#4066E0] drop-shadow-lg animate-bounce-slow group-hover:text-[#1EC6D7] transition-colors" />
+                <div className="absolute z-20 flex flex-col items-center top-4 right-4">
+                <Bot className="w-12 h-12 text-black drop-shadow-lg animate-bounce-slow" />
                 <span className="mt-1 text-sm font-bold text-gray-800">Docxy</span>
               </div>
 
@@ -484,9 +484,9 @@ export default function Home() {
                     e.stopPropagation();
                     handleNav("/DocAI");
                   }}
-                  className="inline-flex items-center gap-2 px-6 py-3 mt-6 font-medium text-gray-800 transition-all bg-white/80 backdrop-blur-sm border border-[#1EC6D7]/30 rounded-full shadow-md hover:bg-[#1EC6D7]/10 hover:border-[#4066E0] hover:text-[#4066E0] hover:shadow-xl group"
+                  className="inline-flex items-center gap-2 px-6 py-3 mt-6 font-medium text-white transition-all bg-black rounded-full shadow-md hover:bg-gray-800 active:bg-black"
                 >
-                  <Sparkles className="w-5 h-5 text-[#4066E0] group-hover:text-[#1EC6D7] animate-pulse" />
+                    <Sparkles className="w-5 h-5 text-white animate-pulse" />
                   <span>Make me a Project Documentation ...</span>
                 </button>
               </div>
@@ -499,10 +499,10 @@ export default function Home() {
 
           {/* Document List */}
           {isLoggedIn && (
-            <div className="mt-6 mb-0 border-t-2 border-[#1EC6D7]/30"> {/* Added mb-0 */}
+            <div className="mt-6 mb-0 border-t-2 border-gray-200"> {/* Added mb-0 */}
               {/* Search bar for documents */}
               <div className="mb-6">
-                <div className="flex items-center justify-between gap-4 px-4 py-3 bg-white rounded-lg shadow-sm">
+            <div className="flex items-center justify-between gap-4 px-4 py-3 bg-white rounded-lg shadow-sm">
                   <div className="relative flex-1">
                     <svg
                       className="absolute w-4 h-4 text-gray-400 -translate-y-1/2 left-3 top-1/2"
@@ -523,19 +523,19 @@ export default function Home() {
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
                       placeholder="Search documents..."
-                      className="w-full sm:max-w-md pl-10 pr-4 py-2 text-sm bg-white border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#4066E0] focus:border-transparent shadow-sm"
+                      className="w-full sm:max-w-md pl-10 pr-4 py-2 text-sm bg-white border border-gray-200 rounded-lg hover:border-black focus:outline-none focus:ring-2 focus:ring-black focus:border-transparent shadow-sm transition-colors"
                     />
                   </div>
-                  <div className="flex items-center gap-2 text-sm">
+                    <div className="flex items-center gap-2 text-sm">
                     <span className="text-gray-500">No. of docs:</span>
-                    <span className="font-medium text-[#4066E0]">{docs.length}</span>
+                    <span className="font-medium text-black">{docs.length}</span>
                   </div>
                 </div>
               </div>
 
               <div className="bg-white rounded-lg shadow-sm">
                 {/* Desktop Header */}
-                <div className="hidden sm:grid grid-cols-[60px,1fr,140px,80px] md:grid-cols-[80px,1fr,180px,100px] font-semibold bg-[#EAF6FF] text-gray-700 py-3 px-2 sm:px-4 rounded-t-lg">
+                <div className="hidden sm:grid grid-cols-[60px,1fr,140px,80px] md:grid-cols-[80px,1fr,180px,100px] font-semibold bg-white text-gray-700 py-3 px-2 sm:px-4 rounded-t-lg">
                   <span className="text-xs text-center md:text-sm">S. No</span>
                   <span className="text-xs md:text-sm">Name</span>
                   <span className="pr-2 text-xs text-right md:text-sm">Date Created</span>
@@ -543,7 +543,7 @@ export default function Home() {
                 </div>
 
                 {/* Mobile Header */}
-                <div className="grid grid-cols-[1fr,80px] sm:hidden font-semibold bg-[#EAF6FF] text-gray-700 py-3 px-3 rounded-t-lg">
+                    <div className="grid grid-cols-[1fr,80px] sm:hidden font-semibold bg-white text-gray-700 py-3 px-3 rounded-t-lg">
                   <span className="text-sm">Document</span>
                   <span className="text-sm text-right">Actions</span>
                 </div>
@@ -558,55 +558,54 @@ export default function Home() {
                     .map((doc, i) => (
                     <div key={doc._id}>
                       {/* Desktop Row */}
-                      <div
-                        className="hidden sm:grid grid-cols-[60px,1fr,140px,80px] md:grid-cols-[80px,1fr,180px,100px] items-center py-3 px-2 sm:px-4 border-b text-sm hover:bg-[#EAF6FF] transition-all"
-                      >
-                        <span className="text-xs text-center md:text-sm">{i + 1}</span>
-
-                        <span
-                          className="flex items-center gap-1 pr-2 text-xs font-medium text-gray-800 truncate md:text-sm"
-                          title={doc.name}
+                      <div className="hidden sm:grid grid-cols-[60px,1fr,140px,80px] md:grid-cols-[80px,1fr,180px,100px] items-center py-3 px-2 sm:px-4 border-b text-sm transition-all group hover:bg-gray-100"
                         >
+                          <span className="text-xs text-center md:text-sm text-black group-hover:text-gray-700">{i + 1}</span>
+
                           <span
-                            className="truncate cursor-pointer"
+                            className="flex items-center gap-1 pr-2 text-xs font-medium text-black truncate md:text-sm group-hover:text-gray-700"
+                            title={doc.name}
+                          >
+                            <span
+                              className="truncate cursor-pointer"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                navigate(`/doc/${doc._id}`);
+                              }}
+                            >
+                              {doc.name}
+                            </span>
+                            {doc.favorite && <Star size={14} className="flex-shrink-0 text-yellow-400 fill-yellow-400" />}
+                          </span>
+
+                          <span className="pr-2 text-xs text-right text-gray-600 md:text-sm text-black group-hover:text-gray-700">
+                            {formatDate(doc.createdAt || doc.created_at)}
+                          </span>
+
+                        <span className="relative flex justify-end">
+                          <button
+                            className="p-1 rounded text-gray-700 hover:bg-gray-200 group-hover:text-white"
                             onClick={(e) => {
                               e.stopPropagation();
-                              navigate(`/doc/${doc._id}`);
+                              toggleDropdown(doc._id, e);
                             }}
+                            aria-haspopup="true"
+                            aria-expanded={dropdownOpen === doc._id}
+                            title="More actions"
                           >
-                            {doc.name}
-                          </span>
-                          {doc.favorite && <Star size={14} className="flex-shrink-0 text-yellow-400 fill-yellow-400" />}
-                        </span>
+                            <MoreVertical size={16} />
+                          </button>
 
-                        <span className="pr-2 text-xs text-right text-gray-600 md:text-sm">
-                          {formatDate(doc.createdAt || doc.created_at)}
-                        </span>
-
-                      <span className="relative flex justify-end">
-                        <button
-                          className="p-1 rounded hover:bg-[#EAF6FF]"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleDropdown(doc._id, e);
-                          }}
-                          aria-haspopup="true"
-                          aria-expanded={dropdownOpen === doc._id}
-                          title="More actions"
-                        >
-                          <MoreVertical size={16} />
-                        </button>
-
-                        {dropdownOpen === doc._id && (
-                          <div
-                            className="doc-dropdown absolute right-0 z-50 mt-2 bg-white border border-[#1EC6D7]/30 rounded-lg shadow-lg w-44 animate-fadeIn"
-                            onMouseLeave={handleMouseLeave}
-                            onClick={(e) => e.stopPropagation()}
-                            onTouchStart={(e) => e.stopPropagation()}
-                          >
+                          {dropdownOpen === doc._id && (
+                              <div
+                              className="doc-dropdown absolute right-0 z-50 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg w-44 animate-fadeIn"
+                              onMouseLeave={handleMouseLeave}
+                              onClick={(e) => e.stopPropagation()}
+                              onTouchStart={(e) => e.stopPropagation()}
+                            >
                             <button
                               type="button"
-                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 console.log('Home: View clicked', doc._id);
@@ -618,7 +617,7 @@ export default function Home() {
                             </button>
                             <button
                               type="button"
-                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 console.log('Home: Edit clicked', doc._id);
@@ -630,7 +629,7 @@ export default function Home() {
                             </button>
                             <button
                               type="button"
-                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 console.log('Home: Favorite clicked', doc._id);
@@ -646,7 +645,7 @@ export default function Home() {
                             </button>
                             <button
                               type="button"
-                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                              className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 console.log('Home: Share clicked', doc._id);
@@ -675,11 +674,11 @@ export default function Home() {
                       </div>
 
                       {/* Mobile Row */}
-                      <div className="grid grid-cols-[1fr,80px] sm:hidden items-start py-3 px-3 border-b hover:bg-[#EAF6FF] transition-all gap-2">
+                      <div className="grid grid-cols-[1fr,80px] sm:hidden items-start py-3 px-3 border-b transition-all gap-2 group hover:bg-gray-100">
                         <div className="flex flex-col gap-1">
                           <div className="flex items-center gap-1">
                             <span
-                              className="font-medium text-gray-800 hover:text-[#4066E0] text-sm truncate max-w-[200px] cursor-pointer"
+                              className="font-medium text-black text-sm truncate max-w-[200px] cursor-pointer group-hover:text-gray-700"
                               title={doc.name}
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -690,12 +689,12 @@ export default function Home() {
                             </span>
                             {doc.favorite && <Star size={12} className="flex-shrink-0 text-yellow-400 fill-yellow-400" />}
                           </div>
-                          <span className="text-xs text-gray-500">{formatDate(doc.createdAt || doc.created_at)}</span>
+                          <span className="text-xs text-gray-500 group-hover:text-gray-700">{formatDate(doc.createdAt || doc.created_at)}</span>
                         </div>
 
                         <span className="relative flex items-start justify-end">
                           <button
-                            className="p-1 rounded hover:bg-[#EAF6FF]"
+                            className="p-1 rounded text-gray-700 hover:bg-gray-200 group-hover:text-white"
                             onClick={(e) => {
                               e.stopPropagation();
                               toggleDropdown(doc._id, e);
@@ -709,14 +708,14 @@ export default function Home() {
 
                           {dropdownOpen === doc._id && (
                             <div
-                              className="absolute right-0 z-50 mt-2 bg-white border border-[#1EC6D7]/30 rounded-lg shadow-lg w-44 animate-fadeIn"
+                              className="absolute right-0 z-50 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg w-44 animate-fadeIn"
                               onMouseLeave={handleMouseLeave}
                               onClick={(e) => e.stopPropagation()}
                               onTouchStart={(e) => e.stopPropagation()}
                             >
                               <button
                                 type="button"
-                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   console.log('Home mobile: View clicked', doc._id);
@@ -728,7 +727,7 @@ export default function Home() {
                               </button>
                               <button
                                 type="button"
-                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   console.log('Home mobile: Edit clicked', doc._id);
@@ -740,7 +739,7 @@ export default function Home() {
                               </button>
                               <button
                                 type="button"
-                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   console.log('Home mobile: Favorite clicked', doc._id);
@@ -752,7 +751,7 @@ export default function Home() {
                               </button>
                               <button
                                 type="button"
-                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                                className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100 hover:text-black"
                                 onClick={(e) => {
                                   e.stopPropagation();
                                   console.log('Home mobile: Share clicked', doc._id);
@@ -793,8 +792,8 @@ export default function Home() {
       {/* Delete confirmation modal - requires typing doc name */}
 
 {/* ===== Folder Creation Video Section (Perfect Rectangle) ===== */}
-<section className="w-full px-4 py-12 bg-gradient-to-br from-[#F9FAFB] via-[#F3F8FF] to-[#E4E1FF] text-center border-t border-[#E0ECFF]">
-  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#4066E0] mb-6">
+<section className="w-full px-4 py-12 bg-white text-center border-t border-[#E0ECFF]">
+  <h2 className="text-2xl sm:text-3xl font-extrabold text-black mb-6">
      How Viadocs Works
   </h2>
 
@@ -821,9 +820,9 @@ export default function Home() {
 
       
 {/* ===== Viadocs Features Section ===== */}
-<section className="mt-0 py-16 bg-gradient-to-b from-[#F9FAFB] via-[#F3F4F6] to-white text-center"> {/* Added mt-0 */}
+<section className="mt-0 py-16 bg-white text-center"> {/* Added mt-0 */}
   <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
-    Work Smarter with <span className="text-[#4066E0]">Viadocs</span>
+    Work Smarter with <span className="text-black">Viadocs</span>
   </h2>
 
   <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg mb-10 px-4">
@@ -835,8 +834,8 @@ export default function Home() {
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
     {/* Card 1 */}
     <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
-      <div className="flex items-center justify-center mb-4">
-        <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+                    <div className="flex items-center justify-center mb-4">
+        <div className="p-3 rounded-xl bg-gray-50 shadow-inner">
           <img
             src={image1}
             alt="Create Documents"
@@ -857,7 +856,7 @@ export default function Home() {
     {/* Card 2 */}
     <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
       <div className="flex items-center justify-center mb-4">
-        <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+        <div className="p-3 rounded-xl bg-gray-50 shadow-inner">
           <img
             src={image2}
             alt="PDF Tools"
@@ -878,7 +877,7 @@ export default function Home() {
     {/* Card 3 */}
     <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
       <div className="flex items-center justify-center mb-4">
-        <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+        <div className="p-3 rounded-xl bg-gray-50 shadow-inner">
           <img
             src={image3}
             alt="AI Assistant"
@@ -899,9 +898,9 @@ export default function Home() {
 </section>
 
      {/* ===== Premium Section ===== */}
-<section className="py-16 bg-gradient-to-r from-[#4066E0]/10 via-[#1EC6D7]/10 to-[#6A3FD7]/10 text-center">
+<section className="py-16 bg-white text-center">
   <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
-    Unlock More with <span className="text-[#4066E0]">Viadocs Premium</span>
+    Unlock More with <span className="text-black">Viadocs Premium</span>
   </h2>
 
   <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg mb-8 px-4">
@@ -910,17 +909,17 @@ export default function Home() {
   </p>
 
   {/* Premium Button (Disabled) */}
-  <div className="relative inline-block group">
+    <div className="relative inline-block group">
     <button
       disabled
-      className="px-6 py-3 font-semibold rounded-full bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] text-white shadow-md opacity-90 cursor-not-allowed group-hover:opacity-100 transition-all"
+      className="px-6 py-3 font-semibold rounded-full bg-black text-white shadow-md opacity-90 cursor-not-allowed group-hover:opacity-100 transition-all"
     >
-      Go Premium 🚀
+      Go Premium
     </button>
 
     {/* Tooltip */}
     <div className="absolute left-1/2 -translate-x-1/2 mt-2 px-3 py-1 text-sm text-white bg-gray-800 rounded-md opacity-0 group-hover:opacity-100 transition-all duration-300 whitespace-nowrap">
-      Coming Soon ✨
+      Coming Soon
     </div>
   </div>
 </section>
@@ -931,18 +930,18 @@ export default function Home() {
             Built for Engineering Students & Employees
           </h2>
           <p className="max-w-2xl mx-auto text-gray-600 mb-10 px-4">
-            I'm a fresher who built <span className="text-[#4066E0] font-semibold">Viadocs</span> 
+            I'm a fresher who built <span className="text-black font-semibold">Viadocs</span> 
             for engineering students and professionals — making document creation, editing, 
             and PDF tools smarter and easier to use.
           </p>
         </section>
 
         {/* ===== Why Viadocs is Used by Engineering Students and Employees ===== */}
-          <section className="py-16 bg-gradient-to-b from-white via-[#F8FAFF] to-[#EEF3FF] text-left border-t border-gray-100">
+          <section className="py-16 bg-white text-left border-t border-gray-100">
             <div className="max-w-6xl mx-auto px-6">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-black mb-8">
-            Why <span className="text-[#4066E0]">Viadocs</span> is Used by Engineering Students and Employees
-              </h2>
+              Why <span className="text-black">Viadocs</span> is Used by Engineering Students and Employees
+                </h2>
 
               <p className="text-gray-600/80 text-base sm:text-lg leading-relaxed mb-6">
             Viadocs was designed with one clear goal — to make documentation simple, smart, and accessible for everyone.
@@ -1043,8 +1042,8 @@ export default function Home() {
         <section className="py-16 bg-white text-center border-t border-gray-100">
           <div className="max-w-5xl mx-auto px-6">
             <h2 className="text-3xl font-extrabold text-black mb-6">
-          Frequently Asked <span className="text-black font-black">Questions</span>
-            </h2>
+            Frequently Asked <span className="text-black font-black">Questions</span>
+              </h2>
 
             <div className="space-y-6 text-left text-gray-600 text-base sm:text-lg">
           <div>
@@ -1106,7 +1105,7 @@ export default function Home() {
               value={deleteInput}
               onChange={(e) => setDeleteInput(e.target.value)}
               placeholder={deleteTarget.name}
-              className="w-full px-3 py-2 mb-4 border rounded border-[#1EC6D7]/40"
+              className="w-full px-3 py-2 mb-4 border rounded border-gray-200"
             />
             <div className="flex justify-end gap-3">
               <button
@@ -1141,14 +1140,14 @@ export default function Home() {
             <div className="flex gap-3 mb-4">
               <button
                 onClick={() => saveRole("student")}
-                className="flex-1 px-4 py-2 font-semibold text-white rounded bg-[#4066E0] hover:bg-[#3458c6]"
+                className="flex-1 px-4 py-2 font-semibold text-white rounded bg-black hover:bg-gray-800"
                 disabled={loadingRoleSave}
               >
                 I'm a Student
               </button>
               <button
                 onClick={() => saveRole("employee")}
-                className="flex-1 px-4 py-2 font-semibold text-white rounded bg-[#1EC6D7] hover:bg-[#18bfc3]"
+                className="flex-1 px-4 py-2 font-semibold text-black rounded border border-gray-300 bg-white hover:bg-black hover:text-white"
                 disabled={loadingRoleSave}
               >
                 I'm an Employee

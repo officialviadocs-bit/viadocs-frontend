@@ -151,7 +151,7 @@ export default function UnlockPDF() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF4FC] via-[#E1EDFB] to-[#CFE3FA]">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -160,7 +160,7 @@ export default function UnlockPDF() {
           <div className="flex justify-start mb-6 sm:mb-8">
             <button
               onClick={() => navigate("/tools")}
-              className="flex items-center gap-2 px-3 py-2 text-white text-sm sm:text-base transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90"
+              className="flex items-center gap-2 px-3 py-2 text-white text-sm sm:text-base transition-all rounded-lg shadow-md bg-black hover:bg-gray-800"
             >
               <ArrowLeft size={18} />
               <span>Back to Tools</span>
@@ -169,10 +169,10 @@ export default function UnlockPDF() {
 
           {/* Header */}
           <div className="mb-6 text-center sm:mb-8">
-            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 rounded-full bg-gradient-to-br from-[#4FC3F7]/30 to-[#3F51B5]/20 sm:w-20 sm:h-20">
-              <Lock className="w-10 h-10 sm:w-12 sm:h-12 text-[#3F51B5] sm:w-10 sm:h-10" />
+            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-3 rounded-full bg-white border border-gray-200 sm:w-20 sm:h-20">
+              <Lock className="w-10 h-10 sm:w-12 sm:h-12 text-black sm:w-10 sm:h-10" />
             </div>
-            <h1 className="mb-2 text-2xl font-bold text-[#3F51B5] sm:text-3xl">
+            <h1 className="mb-2 text-2xl font-bold text-black sm:text-3xl">
               Unlock PDF
             </h1>
             <p className="text-sm text-gray-600 sm:text-base">
@@ -187,10 +187,10 @@ export default function UnlockPDF() {
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
                 onClick={() => fileInputRef.current?.click()}
-                className="p-6 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-[#3F51B5] hover:bg-[#E3F2FD]/40 sm:p-10"
+                className="p-6 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-black hover:bg-black/5 sm:p-10"
               >
-                <Upload className="w-10 h-10 mx-auto mb-3 text-[#3F51B5] sm:w-12 sm:h-12" />
-                <h3 className="mb-2 text-lg font-semibold text-gray-700 sm:text-xl">
+                <Upload className="w-10 h-10 mx-auto mb-3 text-black sm:w-12 sm:h-12" />
+                <h3 className="mb-2 text-lg font-semibold text-black sm:text-xl">
                   Drop your PDF file here
                 </h3>
                 <p className="mb-4 text-sm text-gray-500">
@@ -207,11 +207,11 @@ export default function UnlockPDF() {
             ) : (
               <div className="space-y-5 sm:space-y-6">
                 {/* File info */}
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 rounded-lg bg-[#F5F7FB]">
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 p-3 sm:p-4 rounded-lg bg-gray-50">
                   <div className="flex items-center gap-3">
-                    <File className="w-6 h-6 sm:w-8 sm:h-8 text-[#3F51B5]" />
+                    <File className="w-6 h-6 sm:w-8 sm:h-8 text-black" />
                     <div>
-                      <h3 className="text-sm font-semibold text-gray-900 break-words sm:text-base">
+                      <h3 className="text-sm font-semibold text-black break-words sm:text-base">
                         {file.name}
                       </h3>
                       <p className="text-xs text-gray-500 sm:text-sm">
@@ -232,7 +232,7 @@ export default function UnlockPDF() {
                   <button
                     onClick={checkLockStatus}
                     disabled={isProcessing}
-                    className="px-4 py-2 text-sm sm:text-base rounded-lg bg-[#4066E0] text-white hover:opacity-90 disabled:opacity-60"
+                    className="px-4 py-2 text-sm sm:text-base rounded-lg bg-black text-white hover:bg-gray-800 disabled:opacity-60"
                   >
                     {isProcessing ? (
                       <Loader2 className="inline-block animate-spin" />
@@ -289,7 +289,7 @@ export default function UnlockPDF() {
                           setError(null);
                         }}
                         placeholder="Enter password"
-                        className="w-full px-4 py-2 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-[#1E88E5]/40"
+                        className="w-full px-4 py-2 text-sm sm:text-base border rounded-lg focus:ring-2 focus:ring-black/30"
                       />
                       <button
                         onClick={() => setShowPassword((s) => !s)}
@@ -306,7 +306,7 @@ export default function UnlockPDF() {
                       className={`w-full px-4 py-2 mt-2 text-sm sm:text-base rounded-lg text-white transition-all ${
                         isProcessing
                           ? "bg-blue-300 cursor-not-allowed"
-                          : "bg-[#1E88E5] hover:bg-[#1565C0]"
+                          : "bg-black hover:bg-gray-800"
                       }`}
                     >
                       {isProcessing ? (
@@ -347,14 +347,14 @@ export default function UnlockPDF() {
         </div>
       </main>
       <div className="mt-10 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
-  <h2 className="text-xl font-semibold text-[#3F51B5] mb-2">
-    Convert Excel Sheets to PDF
+  <h2 className="text-xl font-semibold text-black mb-2">
+    Unlock PDF - Remove Password & Restrictions
   </h2>
   <p>
-    Transform Excel spreadsheets (.xls, .xlsx) into printable PDF documents without losing formatting. 
-    Preserve cell colors, charts, and tables exactly as they appear in Excel. 
+    Easily unlock password-protected PDF files online. Remove owner and user passwords, 
+    encryption, and access restrictions securely. 
     <br className="hidden sm:block" />
-    Viadocs converts your data safely and quickly in the cloud.
+    Viadocs ensures your files are kept private and processed safely in the cloud.
   </p>
 </div>
 <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />

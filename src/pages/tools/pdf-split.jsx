@@ -118,7 +118,7 @@ export default function PdfSplit() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF4FC] via-[#E1EDFB] to-[#CFE3FA]">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       <Header />
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
         <div className="max-w-6xl mx-auto">
@@ -126,7 +126,7 @@ export default function PdfSplit() {
                               <div className="flex justify-start mb-8">
                                 <button
                                   onClick={() => navigate("/tools")}
-                                  className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.03]"
+                                  className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
                                 >
                                   <ArrowLeft size={18} />
                                   <span className="text-sm font-medium sm:text-base">
@@ -137,10 +137,10 @@ export default function PdfSplit() {
 
           {/* 🧾 Header */}
           <div className="mb-8 text-center">
-            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#64B5F6]/40 to-[#1E88E5]/30">
-              <File className="w-10 h-10 sm:w-12 sm:h-12 text-[#1E88E5]" />
+            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-white border border-gray-200">
+              <File className="w-10 h-10 sm:w-12 sm:h-12 text-black" />
             </div>
-            <h1 className="mb-2 text-3xl font-bold text-[#0D47A1]">
+            <h1 className="mb-2 text-3xl font-bold text-black">
               PDF Splitter
             </h1>
             <p className="text-lg text-gray-700">
@@ -153,11 +153,11 @@ export default function PdfSplit() {
             {!file ? (
               // Step 1: Upload file
               <div
-                className="p-12 text-center transition-all border-2 border-blue-200 border-dashed cursor-pointer rounded-xl hover:border-[#1E88E5] hover:bg-[#E3F2FD]/60"
+                className="p-12 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-black hover:bg-black/5"
                 onClick={() => document.getElementById("pdfInput").click()}
               >
-                <Upload className="w-12 h-12 mx-auto mb-4 text-[#1E88E5]" />
-                <h3 className="mb-2 text-xl font-semibold text-gray-700">
+                <Upload className="w-12 h-12 mx-auto mb-4 text-black" />
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Drop your PDF file here
                 </h3>
                 <p className="mb-4 text-gray-500">or click to browse files</p>
@@ -188,7 +188,7 @@ export default function PdfSplit() {
                 {/* Right - Controls (Visible on all devices) */}
                 <div className="flex flex-col justify-between p-4 space-y-6">
                   <div>
-                    <label className="block mb-2 font-medium text-[#1565C0]">
+                    <label className="block mb-2 font-medium text-black">
                       From Page
                     </label>
                     <input
@@ -197,11 +197,11 @@ export default function PdfSplit() {
                       min={1}
                       max={numPages || 1}
                       onChange={(e) => setFromPage(Number(e.target.value))}
-                      className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-[#42A5F5]"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black"
                     />
                   </div>
                   <div>
-                    <label className="block mb-2 font-medium text-[#1565C0]">
+                    <label className="block mb-2 font-medium text-black">
                       To Page
                     </label>
                     <input
@@ -210,12 +210,12 @@ export default function PdfSplit() {
                       min={fromPage}
                       max={numPages || 1}
                       onChange={(e) => setToPage(Number(e.target.value))}
-                      className="w-full px-3 py-2 border border-blue-200 rounded-lg focus:ring-2 focus:ring-[#42A5F5]"
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black"
                     />
                   </div>
 
                   {/* PDF info for mobile */}
-                  <div className="block p-3 text-sm text-gray-600 border border-blue-100 rounded-lg lg:hidden bg-blue-50">
+                  <div className="block p-3 text-sm text-gray-600 border border-gray-200 rounded-lg lg:hidden bg-gray-50">
                     <p>
                       <strong>Pages detected:</strong> {numPages || "—"}
                     </p>
@@ -235,7 +235,7 @@ export default function PdfSplit() {
                     {!isProcessing && !downloadUrl && (
                       <button
                         onClick={processFile}
-                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#42A5F5] to-[#1E88E5] hover:opacity-90 hover:scale-[1.02]"
+                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.02]"
                       >
                         <File className="w-5 h-5" />
                         Split & Download
@@ -244,7 +244,7 @@ export default function PdfSplit() {
                     {isProcessing && (
                       <button
                         disabled
-                        className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-blue-300 rounded-lg cursor-not-allowed"
+                        className="flex items-center gap-2 px-6 py-3 font-medium text-white bg-gray-400 rounded-lg cursor-not-allowed"
                       >
                         <Loader2 className="w-5 h-5 animate-spin" />
                         Splitting...
@@ -254,14 +254,14 @@ export default function PdfSplit() {
                       <>
                         <button
                           onClick={downloadFile}
-                          className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#43A047] to-[#2E7D32] hover:opacity-90 hover:scale-[1.02]"
+                          className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.02]"
                         >
                           <Download className="w-5 h-5" />
                           Download Split PDF
                         </button>
                         <button
                           onClick={resetTool}
-                          className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-gray-400 to-gray-600 hover:opacity-90"
+                          className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gray-500 hover:bg-gray-600"
                         >
                           Split Another
                         </button>
@@ -275,7 +275,7 @@ export default function PdfSplit() {
         </div>
       </main>
       <div className="mt-10 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
-  <h2 className="text-xl font-semibold text-[#3F51B5] mb-2">
+  <h2 className="text-xl font-semibold text-black mb-2">
     Split PDF Pages Instantly
   </h2>
   <p>
@@ -285,7 +285,9 @@ export default function PdfSplit() {
     Viadocs makes PDF splitting fast, simple, and privacy-safe.
   </p>
 </div>
-<div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+      <div className="w-full py-4 bg-white">
+        <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" className="w-full" />
+      </div>
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">
   <div className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-white font-medium tracking-wide">
     © 2025 <span className="text-[#1EC6D7] font-semibold">Viadocs</span>. All rights reserved.

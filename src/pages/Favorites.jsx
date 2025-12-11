@@ -119,7 +119,7 @@ export default function Favorites() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF]">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
         <div className="max-w-6xl mx-auto">
@@ -127,7 +127,7 @@ export default function Favorites() {
                                       <div className="flex justify-start mb-8">
                                         <button
                                           onClick={() => navigate("/home")}
-                                          className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:opacity-90 hover:scale-[1.03] active:scale-[0.97]"
+                                          className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03] active:scale-[0.97]"
                                         >
                                           <ArrowLeft size={18} />
                                           <span className="text-sm font-medium sm:text-base">Back</span>
@@ -136,7 +136,7 @@ export default function Favorites() {
 
           {/* Title */}
           <h2 className="mb-8 text-2xl font-extrabold text-center text-gray-900">
-            Your <span className="text-[#4066E0]">Favorite Docs</span>
+            Your <span className="text-black">Favorite Docs</span>
           </h2>
 
           {/* Docs Grid */}
@@ -150,7 +150,7 @@ export default function Favorites() {
                 docs.map((doc) => (
                   <div
                     key={doc._id}
-                    className="relative p-5 bg-white border border-[#1EC6D7]/30 shadow-sm cursor-pointer rounded-2xl hover:shadow-xl hover:border-[#4066E0]/40 hover:bg-[#EAF6FF] transition-all group"
+                    className="relative p-5 bg-white border border-gray-200 shadow-sm cursor-pointer rounded-2xl hover:shadow-xl hover:border-black hover:bg-gray-50 transition-all group"
                     onClick={() =>
                       navigate(`/doc/${doc._id}`, { state: { openTools: true } })
                     }
@@ -166,7 +166,7 @@ export default function Favorites() {
 
                     {/* Doc Icon */}
                     <div className="flex flex-col items-center">
-                      <FileText className="w-10 h-10 mb-2 text-[#4066E0] group-hover:text-[#1EC6D7]" />
+                      <FileText className="w-10 h-10 mb-2 text-black group-hover:text-black" />
                       <p className="text-xs font-semibold text-center text-gray-800 truncate">
                         {doc.name}
                       </p>
@@ -174,9 +174,9 @@ export default function Favorites() {
 
                     {/* Dropdown menu */}
                     {dropdownOpen === doc._id && (
-                      <div className="absolute z-20 p-2 -translate-x-1/2 bg-white border border-[#1EC6D7]/30 rounded-lg shadow-lg w-40 top-14 left-1/2 animate-fadeIn">
+                      <div className="absolute z-20 p-2 -translate-x-1/2 bg-white border border-gray-200 rounded-lg shadow-lg w-40 top-14 left-1/2 animate-fadeIn">
                         <button
-                          className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                          className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100"
                           onClick={(e) => {
                             e.stopPropagation();
                             navigate(`/doc/${doc._id}`, { state: { openTools: true } });
@@ -186,7 +186,7 @@ export default function Favorites() {
                           <Eye size={14} /> View
                         </button>
                         <button
-                          className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                          className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100"
                           onClick={(e) => {
                             e.stopPropagation();
                             navigate(`/doc/${doc._id}/edit`);
@@ -196,7 +196,7 @@ export default function Favorites() {
                           <Edit size={14} /> Edit
                         </button>
                         <button
-                          className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-[#E6F9FC]"
+                          className="flex items-center w-full gap-2 px-3 py-2 text-sm hover:bg-gray-100"
                           onClick={(e) => {
                             e.stopPropagation();
                             shareDocAsPDF(doc);
@@ -241,9 +241,9 @@ export default function Favorites() {
           </div>
 
           {/* ===== Viadocs Features Section ===== */}
-          <section className="mt-0 py-16 bg-gradient-to-b from-[#F9FAFB] via-[#F3F4F6] to-white text-center"> {/* Added mt-0 */}
+          <section className="mt-0 py-16 bg-white text-center border-t border-gray-200">
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
-              Work Smarter with <span className="text-[#4066E0]">Viadocs</span>
+              Work Smarter with <span className="text-black">Viadocs</span>
             </h2>
 
             <p className="max-w-3xl mx-auto text-gray-600 text-base sm:text-lg mb-10 px-4">
@@ -256,7 +256,7 @@ export default function Favorites() {
               {/* Card 1 */}
               <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+                  <div className="p-3 rounded-xl bg-gray-100 shadow-inner">
                     <img
                       src={image1}
                       alt="Create Documents"
@@ -277,7 +277,7 @@ export default function Favorites() {
               {/* Card 2 */}
               <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+                  <div className="p-3 rounded-xl bg-gray-100 shadow-inner">
                     <img
                       src={image2}
                       alt="PDF Tools"
@@ -298,7 +298,7 @@ export default function Favorites() {
               {/* Card 3 */}
               <div className="p-6 bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-100 hover:-translate-y-1">
                 <div className="flex items-center justify-center mb-4">
-                  <div className="p-3 rounded-xl bg-[#EAF6FF] shadow-inner">
+                  <div className="p-3 rounded-xl bg-gray-100 shadow-inner">
                     <img
                       src={image3}
                       alt="AI Assistant"
@@ -324,7 +324,7 @@ export default function Favorites() {
               Built for Engineering Students & Employees
             </h2>
             <p className="max-w-2xl mx-auto text-gray-600 mb-10 px-4">
-              I’m a fresher who built <span className="text-[#4066E0] font-semibold">Viadocs</span> 
+              I'm a fresher who built <span className="text-black font-semibold">Viadocs</span>
               for engineering students and professionals — making document creation, editing, 
               and PDF tools smarter and easier to use.
             </p>
@@ -356,7 +356,7 @@ export default function Favorites() {
               type="text"
               value={deleteInput}
               onChange={(e) => setDeleteInput(e.target.value)}
-              className="w-full px-3 py-2 mb-4 border rounded border-[#1EC6D7]/40"
+              className="w-full px-3 py-2 mb-4 border rounded border-gray-300"
               placeholder={deleteTarget.name}
             />
             <div className="flex justify-end gap-3">

@@ -53,13 +53,13 @@ export default function DocAI() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#E8F4FD] via-[#EDE7FB] to-[#F3E9FE]">
+    <div className="flex flex-col min-h-screen bg-white">
       <Header />
-      <section className="bg-[#6A3FD7]/10 py-3 text-center text-sm font-medium text-[#6A3FD7]">
-        🚀 Docxy AI Beta launching soon — Join the waitlist for early access!
+      <section className="bg-gray-100 py-3 text-center text-sm font-medium text-gray-700">
+        Docxy AI Beta launching soon — Join the waitlist for early access!
       </section>
 
-      <main className="flex-1 px-3 sm:px-6 py-10 animate-fadeIn bg-gradient-to-br from-[#E8F4FD] via-[#EDE7FB] to-[#F3E9FE]">
+      <main className="flex-1 px-3 sm:px-6 py-10 animate-fadeIn bg-white">
         <div className="flex flex-col max-w-6xl mx-auto md:flex-row md:items-start md:justify-start">
           <div className="w-full md:w-[80%] lg:w-[70%]">
 
@@ -67,7 +67,7 @@ export default function DocAI() {
             <div className="mb-8">
               <button
                 onClick={() => navigate("/home")}
-                className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.03]"
+                className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03]"
               >
                 <ArrowLeft size={18} />
                 <span className="text-sm font-medium sm:text-base">
@@ -77,13 +77,13 @@ export default function DocAI() {
             </div>
 
             {/* Main Card */}
-            <div className="p-6 sm:p-10 border border-purple-100 shadow-xl bg-white/80 backdrop-blur-md rounded-2xl">
+            <div className="p-6 sm:p-10 border border-gray-200 shadow-xl bg-white rounded-2xl">
               <div className="flex flex-col items-center mb-8">
-                <div className="flex items-center justify-center mb-4 bg-gradient-to-r from-[#1EC6D7] to-[#6A3FD7] rounded-full w-14 h-14 shadow-md">
+                <div className="flex items-center justify-center mb-4 bg-black rounded-full w-14 h-14 shadow-md">
                   <Cpu className="w-8 h-8 text-white" />
                 </div>
-                <h1 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#1EC6D7] to-[#6A3FD7]">
-                  Docxy— Coming Soon
+                <h1 className="text-3xl font-extrabold text-black">
+                  Docxy — Coming Soon
                 </h1>
                 <p className="max-w-md mt-2 text-center text-gray-600">
                   Smart document creation powered by AI — we’re perfecting your next-gen writing assistant.
@@ -114,21 +114,21 @@ export default function DocAI() {
                     autoComplete="off"
                   >
                     <div className="relative">
-                      <Mail className="absolute text-purple-500 left-3 top-3" size={18} />
+                      <Mail className="absolute text-black left-3 top-3" size={18} />
                       <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@company.com"
                         required
-                        className="w-full px-10 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 text-gray-700"
+                        className="w-full px-10 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-gray-700"
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={loading}
-                      className="px-4 py-2 font-semibold text-white rounded-full shadow-md transition-all bg-gradient-to-r from-[#1EC6D7] to-[#6A3FD7] hover:scale-[1.02] hover:shadow-lg disabled:opacity-60"
+                      className="px-4 py-2 font-semibold text-white rounded-full shadow-md transition-all bg-black hover:bg-gray-800 disabled:opacity-60"
                     >
                       {loading ? "Submitting..." : "Request Access"}
                     </button>
@@ -144,7 +144,7 @@ export default function DocAI() {
 
               <div className="mt-10 text-sm text-center text-gray-500">
                 Estimated launch:{" "}
-                <span className="font-semibold text-purple-600">Q4 2025</span>
+                <span className="font-semibold text-black">Q4 2025</span>
               </div>
             </div>
           </div>
@@ -167,10 +167,10 @@ export default function DocAI() {
       </div>
 
       {/* ===== About Docxy AI Section ===== */}
-      <section className="py-16 bg-gradient-to-b from-[#F9FAFB] via-[#F3F8FF] to-[#E4E1FF] text-center border-t border-gray-100">
+      <section className="py-16 bg-white text-center border-t border-gray-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-6">
-            Meet <span className="text-[#6A3FD7]">Docxy AI</span> — The Future of Smart Documentation
+            Meet <span className="text-black">Docxy AI</span> — The Future of Smart Documentation
           </h2>
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed mb-8">
             Docxy is an upcoming AI-powered assistant by Viadocs designed to help students, professionals, and researchers 
@@ -181,42 +181,42 @@ export default function DocAI() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8 text-left">
             <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-              <h4 className="text-base sm:text-lg font-semibold text-[#4066E0] mb-2">🧠 AI Understanding</h4>
+              <h4 className="text-base sm:text-lg font-semibold text-black mb-2"> AI Understanding</h4>
               <p className="text-gray-600 text-xs sm:text-sm">
                 Docxy understands your input context and generates grammatically correct, well-formatted documentation instantly.
               </p>
             </div>
 
             <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-              <h4 className="text-base sm:text-lg font-semibold text-[#4066E0] mb-2">✍️ Custom Writing Styles</h4>
+              <h4 className="text-base sm:text-lg font-semibold text-black mb-2">Custom Writing Styles</h4>
               <p className="text-gray-600 text-xs sm:text-sm">
                 Choose from academic, formal, or professional tone presets to match your document type.
               </p>
             </div>
 
             <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-              <h4 className="text-base sm:text-lg font-semibold text-[#4066E0] mb-2">📊 Smart Structure</h4>
+              <h4 className="text-base sm:text-lg font-semibold text-black mb-2"> Smart Structure</h4>
               <p className="text-gray-600 text-xs sm:text-sm">
                 Automatically organizes your content into headings, subpoints, and summaries — ready to export as PDF or Word.
               </p>
             </div>
 
             <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-              <h4 className="text-base sm:text-lg font-semibold text-[#4066E0] mb-2">🔒 Secure Data Processing</h4>
+              <h4 className="text-base sm:text-lg font-semibold text-black mb-2"> Secure Data Processing</h4>
               <p className="text-gray-600 text-xs sm:text-sm">
                 All AI processing happens securely through Viadocs’ servers with strict data encryption.
               </p>
             </div>
 
             <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-              <h4 className="text-base sm:text-lg font-semibold text-[#4066E0] mb-2">📚 Perfect for Students</h4>
+              <h4 className="text-base sm:text-lg font-semibold text-black mb-2"> Perfect for Students</h4>
               <p className="text-gray-600 text-xs sm:text-sm">
                 Create project documentation, internship reports, or technical writeups without worrying about structure or formatting.
               </p>
             </div>
 
             <div className="p-4 sm:p-6 bg-white rounded-xl sm:rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all">
-              <h4 className="text-base sm:text-lg font-semibold text-[#4066E0] mb-2">🚀 Early Access Rewards</h4>
+              <h4 className="text-base sm:text-lg font-semibold text-black mb-2"> Early Access Rewards</h4>
               <p className="text-gray-600 text-xs sm:text-sm">
                 Early users get exclusive credits, priority support, and the chance to shape the AI’s next-gen features.
               </p>

@@ -111,7 +111,7 @@ export default function ImageToPdf() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF4FC] via-[#E1EDFB] to-[#CFE3FA]">
+    <div className="flex flex-col min-h-screen bg-white text-black">
       <Header />
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
@@ -120,7 +120,7 @@ export default function ImageToPdf() {
           <div className="flex justify-start mb-8">
             <button
               onClick={() => navigate("/tools")}
-              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.03] active:scale-[0.97]"
+              className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03] active:scale-[0.97]"
             >
               <ArrowLeft size={18} />
               <span className="text-sm font-medium sm:text-base">
@@ -131,10 +131,10 @@ export default function ImageToPdf() {
 
           {/* Header */}
           <div className="mb-10 text-center">
-            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-[#4FC3F7]/30 to-[#3F51B5]/20">
-              <File className="w-10 h-10 sm:w-12 sm:h-12 text-[#3F51B5]" />
+            <div className="flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 rounded-full bg-white border border-gray-200">
+              <File className="w-10 h-10 sm:w-12 sm:h-12 text-black" />
             </div>
-            <h1 className="mb-3 text-3xl font-bold text-[#3F51B5] sm:text-4xl">
+            <h1 className="mb-3 text-3xl font-bold text-black sm:text-4xl">
               Image to PDF Converter
             </h1>
             <p className="text-base text-gray-700 sm:text-lg">
@@ -148,11 +148,11 @@ export default function ImageToPdf() {
               <div
                 onDrop={handleDrop}
                 onDragOver={(e) => e.preventDefault()}
-                className="p-10 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-[#3F51B5] hover:bg-[#E3F2FD]/40"
+                className="p-10 text-center transition-all border-2 border-gray-300 border-dashed cursor-pointer rounded-xl hover:border-black hover:bg-black/5"
                 onClick={() => fileInputRef.current?.click()}
               >
-                <Upload className="w-12 h-12 mx-auto mb-4 text-[#3F51B5]" />
-                <h3 className="mb-2 text-xl font-semibold text-gray-700">
+                <Upload className="w-12 h-12 mx-auto mb-4 text-black" />
+                <h3 className="mb-2 text-xl font-semibold text-black">
                   Drop your image files here
                 </h3>
                 <p className="mb-4 text-gray-500">or click to browse files</p>
@@ -176,12 +176,12 @@ export default function ImageToPdf() {
                   {files.map((file, idx) => (
                     <div
                       key={idx}
-                      className="flex flex-col items-center justify-between gap-4 p-4 rounded-lg sm:flex-row bg-[#F5F7FB]"
+                      className="flex flex-col items-center justify-between gap-4 p-4 rounded-lg sm:flex-row bg-gray-50"
                     >
                       <div className="flex items-center gap-4">
-                        <File className="w-6 h-6 text-[#3F51B5]" />
+                        <File className="w-6 h-6 text-black" />
                         <div>
-                          <h3 className="font-semibold text-gray-900 break-all">
+                          <h3 className="font-semibold text-black break-all">
                             {file.name}
                           </h3>
                           <p className="text-sm text-gray-500">
@@ -191,7 +191,7 @@ export default function ImageToPdf() {
                       </div>
                       <button
                         onClick={() => removeFile(idx)}
-                        className="px-3 py-1 text-sm font-medium text-gray-600 transition-all rounded-md hover:text-[#1E88E5] hover:bg-[#E3F2FD]"
+                        className="px-3 py-1 text-sm font-medium text-gray-600 transition-all rounded-md hover:text-gray-800 hover:bg-gray-100"
                       >
                         Remove
                       </button>
@@ -221,7 +221,7 @@ export default function ImageToPdf() {
                   {!isProcessing && !isComplete && (
                     <button
                       onClick={processFiles}
-                      className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.02]"
+                      className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.02]"
                     >
                       <File className="w-5 h-5" />
                       Convert to PDF
@@ -231,7 +231,7 @@ export default function ImageToPdf() {
                   {isProcessing && (
                     <button
                       disabled
-                      className="flex items-center gap-2 px-6 py-3 font-medium text-white rounded-lg bg-[#9FA8DA] cursor-not-allowed"
+                      className="flex items-center gap-2 px-6 py-3 font-medium text-white rounded-lg bg-gray-400 cursor-not-allowed"
                     >
                       <Loader2 className="w-5 h-5 animate-spin" />
                       Converting...
@@ -242,14 +242,14 @@ export default function ImageToPdf() {
                     <div className="flex flex-col items-center gap-4 sm:flex-row">
                       <button
                         onClick={downloadFile}
-                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4FC3F7] to-[#3F51B5] hover:opacity-90 hover:scale-[1.02]"
+                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.02]"
                       >
                         <Download className="w-5 h-5" />
                         Download PDF
                       </button>
                       <button
                         onClick={resetTool}
-                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-gray-400 to-gray-600 hover:opacity-90"
+                        className="flex items-center gap-2 px-6 py-3 font-medium text-white transition-all rounded-lg shadow-md bg-gray-500 hover:bg-gray-600"
                       >
                         Convert Another
                       </button>
@@ -263,7 +263,7 @@ export default function ImageToPdf() {
       </main>
       
       <div className="mt-10 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
-  <h2 className="text-xl font-semibold text-[#3F51B5] mb-2">
+  <h2 className="text-xl font-semibold text-black mb-2">
     Convert Images to PDF
   </h2>
   <p>
@@ -274,6 +274,10 @@ export default function ImageToPdf() {
   </p>
 </div>
 
+
+      <div className="w-full py-4 bg-white">
+        <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" className="w-full" />
+      </div>
 
       <footer className="w-full mt-auto py-3 bg-black border-t border-gray-800">
   <div className="max-w-5xl mx-auto text-center text-xs sm:text-sm text-white font-medium tracking-wide">

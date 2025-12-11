@@ -324,7 +324,7 @@ export default function Profile() {
   // ---------- UI ----------
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF]">
+      <div className="min-h-screen bg-white text-black">
         <Header />
         <main className="flex items-center justify-center min-h-[60vh]">
           <div className="p-6 bg-white rounded-lg shadow">Loading profile...</div>
@@ -348,7 +348,7 @@ export default function Profile() {
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-[#EAF6FF] via-[#F3F8FF] to-[#E4E1FF]">
       <Header />
 
-       <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+       
 
       <main className="flex-1 px-6 pb-0 pt-20 sm:pt-28">
         <div className="max-w-5xl mx-auto">
@@ -358,7 +358,7 @@ export default function Profile() {
                              <div className="flex justify-start mb-8">
                                <button
                                  onClick={() => navigate("/home")}
-                                 className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:opacity-90 hover:scale-[1.03] active:scale-[0.97]"
+                                 className="flex items-center gap-2 px-4 py-2 text-white transition-all rounded-lg shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03] active:scale-[0.97]"
                                >
                                  <ArrowLeft size={18} />
                                  <span className="text-sm font-medium sm:text-base">Back</span>
@@ -370,15 +370,15 @@ export default function Profile() {
               <button
                 type="button"
                 onClick={() => setSettingsOpen(!settingsOpen)}
-                className="p-3 text-gray-700 transition-all bg-white border border-[#1EC6D7]/20 rounded-full shadow-sm hover:shadow-md hover:bg-white/90"
+                className="p-3 text-gray-700 transition-all bg-white border border-gray-200 rounded-full shadow-sm hover:shadow-md hover:bg-white/90"
                 aria-expanded={settingsOpen}
                 aria-haspopup="true"
               >
-                <MoreVertical size={20} className="text-[#4066E0]" />
+                <MoreVertical size={20} className="text-black" />
               </button>
               {settingsOpen && (
                 <div
-                  className="absolute right-0 z-10 w-48 mt-2 bg-white border border-[#1EC6D7]/30 rounded-lg shadow-lg"
+                  className="absolute right-0 z-10 w-48 mt-2 bg-white border border-gray-200 rounded-lg shadow-lg"
                   role="menu"
                 >
                   {settingsMenuItems.map((item, i) => (
@@ -389,7 +389,7 @@ export default function Profile() {
                         navigate(item.path);
                         setSettingsOpen(false);
                       }}
-                      className="w-full px-4 py-3 text-left text-gray-700 transition-colors hover:bg-purple-50 hover:text-purple-700"
+                      className="w-full px-4 py-3 text-left text-gray-700 transition-colors hover:bg-gray-50 hover:text-black"
                     >
                       {item.label}
                     </button>
@@ -400,7 +400,7 @@ export default function Profile() {
           </div>
 
           {/* Profile Card */}
-          <div className="p-6 bg-white border border-[#1EC6D7]/20 shadow-lg rounded-2xl">
+          <div className="p-6 bg-white border border-gray-200 shadow-lg rounded-2xl">
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
               {/* Left Side */}
               <div className="space-y-6">
@@ -408,7 +408,7 @@ export default function Profile() {
                 <div className="flex flex-col items-center">
                   <div className="relative">
                     {/* Gradient ring wrapper */}
-                    <div className="p-1 rounded-full bg-gradient-to-r from-[#4066E0] via-[#1EC6D7] to-[#6A3FD7] animate-gradient-rotate">
+                    <div className="p-1 rounded-full bg-black animate-gradient-rotate">
                       <div className="p-1 bg-white rounded-full">
                         <div className="relative overflow-hidden bg-gray-100 border border-white rounded-full shadow-xl w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36">
                           {profile.profileImage ? (
@@ -438,7 +438,7 @@ export default function Profile() {
                     <button
                       type="button"
                       onClick={() => fileInputRef.current?.click()}
-                      className="absolute -bottom-1 -right-1 p-2 text-white transition-colors bg-[#4066E0] rounded-full shadow-lg hover:bg-[#1EC6D7]"
+                      className="absolute -bottom-1 -right-1 p-2 text-white transition-colors bg-black rounded-full shadow-lg hover:bg-gray-800"
                       aria-label="Change profile image"
                     >
                       <Camera size={16} />
@@ -480,7 +480,7 @@ export default function Profile() {
                             fullName: e.target.value,
                           }))
                         }
-                        className="flex-1 px-3 py-2 border rounded-lg focus:border-[#4066E0] focus:ring focus:ring-[#4066E0]/20"
+                        className="flex-1 px-3 py-2 border rounded-lg focus:border-black focus:ring focus:ring-black/20"
                         placeholder="Your full name"
                       />
                       <div className="flex flex-shrink-0 gap-2">
@@ -545,7 +545,7 @@ export default function Profile() {
                             dateOfBirth: e.target.value,
                           }))
                         }
-                        className="flex-1 px-3 py-2 border rounded-lg focus:border-[#4066E0] focus:ring focus:ring-[#4066E0]/20"
+                        className="flex-1 px-3 py-2 border rounded-lg focus:border-black focus:ring focus:ring-black/20"
                       />
                       <div className="flex flex-shrink-0 gap-2">
                         <button
@@ -583,8 +583,8 @@ export default function Profile() {
                 </div>
               </div>
 {/* Right Section - Plan */}
-              <div className="p-6 border border-[#1EC6D7]/40 bg-gradient-to-br from-[#EAF6FF] to-[#F3F8FF] rounded-xl">
-                <div className="p-4 mb-6 bg-white border border-[#1EC6D7]/30 rounded-lg">
+              <div className="p-6 border border-gray-200 bg-white rounded-xl">
+                <div className="p-4 mb-6 bg-gray-50 border border-gray-200 rounded-lg">
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-semibold text-gray-800">
                       {profile.plan === "premium" ? "Premium" : "Starter"}
@@ -614,13 +614,13 @@ export default function Profile() {
                       )}
                     </div>
                     <div className="mb-4">
-                      <div className="flex items-center justify-center w-20 h-20 mx-auto rounded-full shadow-lg bg-gradient-to-br from-[#4066E0] via-[#1EC6D7] to-[#6A3FD7]">
+                      <div className="flex items-center justify-center w-20 h-20 mx-auto rounded-full shadow-lg bg-black">
                         <Crown size={32} className="text-white" />
                       </div>
                     </div>
                     <button
                       onClick={() => navigate("/coming-soon")}
-                      className="flex items-center justify-center w-full gap-2 px-6 py-3 font-semibold text-white rounded-full shadow-lg bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:from-[#1EC6D7] hover:to-[#4066E0]"
+                      className="flex items-center justify-center w-full gap-2 px-6 py-3 font-semibold text-white rounded-full shadow-lg bg-black hover:bg-gray-800"
                     >
                       <Sparkles size={18} />
                       <span>Unlock Premium</span>
@@ -634,15 +634,15 @@ export default function Profile() {
       </main>
 
     {/* ===== About Viadocs Section (SEO + AdSense Friendly) ===== */}
-<div className="p-10 mt-14 text-center border-t border-[#1EC6D7]/30 bg-gradient-to-br from-[#EAF6FF]/60 to-[#E4E1FF]/60 rounded-2xl shadow-sm">
-  <h2 className="text-3xl font-extrabold text-[#4066E0] mb-4">
-    About <span className="text-[#1EC6D7]">Viadocs</span> & Our Users
+<div className="p-10 mt-14 text-center border-t border-gray-200 bg-white rounded-2xl shadow-sm">
+  <h2 className="text-3xl font-extrabold text-black mb-4">
+    About <span className="text-black">Viadocs</span> & Our Users
   </h2>
   <p className="max-w-3xl mx-auto text-gray-700 text-sm sm:text-base leading-relaxed mb-6">
-    <strong className="text-[#4066E0]">Viadocs</strong> is more than just an AI-powered document platform —
-    it’s a growing community of learners, professionals, and creators shaping
+    <strong className="text-black">Viadocs</strong> is more than just an AI-powered document platform —
+    it's a growing community of learners, professionals, and creators shaping
     the future of intelligent productivity. Developed by{" "}
-    <span className="text-[#1EC6D7] font-medium">Work Wizards Innovations</span>, Viadocs enables you to
+    <span className="text-black font-medium">Work Wizards Innovations</span>, Viadocs enables you to
     create, edit, and manage files with speed, security, and automation — all in one place.
   </p>
 
@@ -654,25 +654,25 @@ export default function Profile() {
   </p>
 
   <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
-    <div className="p-6 rounded-xl border border-[#1EC6D7]/30 bg-white/80 shadow-sm hover:shadow-md transition-all">
-      <h3 className="text-xl font-semibold text-[#4066E0] mb-2">Our Vision 🌍</h3>
+    <div className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all">
+      <h3 className="text-xl font-semibold text-black mb-2">Our Vision </h3>
       <p className="text-sm text-gray-600">
         To redefine how people interact with documents — blending Artificial
         Intelligence, automation, and simplicity for everyone, everywhere.
       </p>
     </div>
-    <div className="p-6 rounded-xl border border-[#1EC6D7]/30 bg-white/80 shadow-sm hover:shadow-md transition-all">
-      <h3 className="text-xl font-semibold text-[#4066E0] mb-2">
-        User Commitment 🤝
+    <div className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all">
+      <h3 className="text-xl font-semibold text-black mb-2">
+        User Commitment 
       </h3>
       <p className="text-sm text-gray-600">
         We value your trust and privacy. Viadocs ensures your data stays secure
         and never shared, following transparent and GDPR-compliant policies.
       </p>
     </div>
-    <div className="p-6 rounded-xl border border-[#1EC6D7]/30 bg-white/80 shadow-sm hover:shadow-md transition-all">
-      <h3 className="text-xl font-semibold text-[#4066E0] mb-2">
-        Innovation Promise ⚙️
+    <div className="p-6 rounded-xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition-all">
+      <h3 className="text-xl font-semibold text-black mb-2">
+        Innovation Promise 
       </h3>
       <p className="text-sm text-gray-600">
         Every Viadocs feature is built with cutting-edge AI and cloud
@@ -682,8 +682,8 @@ export default function Profile() {
   </div>
 
   <div className="mt-10">
-    <h3 className="text-lg font-semibold text-[#4066E0] mb-2">
-      💬 Have Feedback or Ideas?
+    <h3 className="text-lg font-semibold text-black mb-2">
+       Have Feedback or Ideas?
     </h3>
     <p className="text-gray-600 text-sm mb-4">
       We love hearing from our users! Your suggestions help us improve Viadocs
@@ -691,7 +691,7 @@ export default function Profile() {
     </p>
     <button
       onClick={() => navigate("/feedback")}
-      className="px-6 py-3 text-sm font-semibold text-white rounded-full shadow-md bg-gradient-to-r from-[#4066E0] to-[#1EC6D7] hover:scale-[1.03] hover:shadow-lg transition-all"
+      className="px-6 py-3 text-sm font-semibold text-white rounded-full shadow-md bg-black hover:bg-gray-800 hover:scale-[1.03] hover:shadow-lg transition-all"
     >
       Share Feedback
     </button>
@@ -702,7 +702,7 @@ export default function Profile() {
 
 
       <Footer />
-      <div id="container-c152ce441ed68e2ebb08bdbddefa4fac" />
+      
       {/* ---------- Crop Modal ---------- */}
       {showCropModal && imageSrc && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60">
@@ -726,7 +726,7 @@ export default function Profile() {
                   type="button"
                   onClick={handleSaveCrop}
                   disabled={saving}
-                  className="px-3 py-1 text-sm text-white bg-[#4066E0] rounded hover:bg-[#1EC6D7]"
+                  className="px-3 py-1 text-sm text-white bg-black rounded hover:bg-gray-800"
                 >
                   {saving ? "Saving..." : "Save & Upload"}
                 </button>
