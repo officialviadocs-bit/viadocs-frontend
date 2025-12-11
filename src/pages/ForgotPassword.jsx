@@ -30,7 +30,7 @@ export default function ForgotPassword() {
   const BASE_URL =
     process.env.REACT_APP_API_URL
       ? `${process.env.REACT_APP_API_URL}/api/auth`
-      : "http://viadocs.in//api/auth";
+      : "https://viadocs-backend-u977.onrender.com/api/auth";
 
   // Countdown for resend OTP
   useEffect(() => {

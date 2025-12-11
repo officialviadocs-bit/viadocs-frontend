@@ -20,7 +20,7 @@ export default function DocAI() {
     setSuccess(false);
 
     try {
-      const res = await axios.post("http://viadocs.in//api/docai/early-access", { email });
+      const res = await axios.post("https://viadocs-backend-u977.onrender.com/api/docai/early-access", { email });
       if (res.status === 200) {
         setSuccess(true);
         setEmail("");

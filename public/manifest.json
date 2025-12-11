@@ -27,14 +27,14 @@
 
   "screenshots": [
     {
-      "src": "http://localhost:3000/screenshot-home.webp",
+      "src": "https://viadocs.in/screenshot-home.webp",
       "sizes": "1280x720",
       "type": "image/webp",
       "form_factor": "wide",
       "label": "Viadocs Web Dashboard"
     },
     {
-      "src": "http://localhost:3000/screenshot-mobile.webp",
+      "src": "https://viadocs.in/screenshot-mobile.webp",
       "sizes": "600x800",
       "type": "image/webp",
       "form_factor": "narrow",

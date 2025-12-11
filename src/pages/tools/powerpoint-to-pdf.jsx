@@ -64,7 +64,7 @@ export default function PowerpointToPdf() {
       formData.append("file", file);
 
       const response = await axios.post(
-        "http://viadocs.in//api/tools/ppt-to-pdf", // backend route
+        "https://viadocs-backend-u977.onrender.com/api/tools/ppt-to-pdf", // backend route
         formData,
         {
           headers: { "Content-Type": "multipart/form-data" },

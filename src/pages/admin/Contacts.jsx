@@ -11,7 +11,7 @@ export default function Contacts() {
   const fetchContacts = async () => {
     try {
       setLoading(true);
-      const res = await fetch("http://viadocs.in//api/admin/contacts");
+      const res = await fetch("https://viadocs-backend-u977.onrender.com/api/admin/contacts");
       const data = await res.json();
 
       if (res.ok) {
@@ -35,7 +35,7 @@ export default function Contacts() {
     if (!deleteTarget) return;
     try {
       const res = await fetch(
-        `http://viadocs.in//api/admin/contacts/${deleteTarget._id}`,
+        `https://viadocs-backend-u977.onrender.com/api/admin/contacts/${deleteTarget._id}`,
         { method: "DELETE" }
       );
       const data = await res.json();

@@ -13,7 +13,7 @@ Disallow: /profile
 Disallow: /forgot-password
 
 # Sitemap for better Google indexing
-Sitemap: http://localhost:3000/sitemap.xml
+Sitemap: https://viadocs.in/sitemap.xml
 
 # Crawl-delay (optional — keeps your server safe from overload)
 Crawl-delay: 10

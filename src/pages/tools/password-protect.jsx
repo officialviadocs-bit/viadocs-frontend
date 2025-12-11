@@ -76,7 +76,7 @@ export default function PasswordProtect() {
       form.append("pdfFile", file);
 
       const res = await axios.post(
-        "http://viadocs.in//api/tools/password-protect/check",
+        "https://viadocs-backend-u977.onrender.com/api/tools/password-protect/check",
         form,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -107,7 +107,7 @@ export default function PasswordProtect() {
       form.append("password", newPassword);
 
       const res = await axios.post(
-        "http://viadocs.in//api/tools/password-protect",
+        "https://viadocs-backend-u977.onrender.com/api/tools/password-protect",
         form,
         { responseType: "blob" }
       );

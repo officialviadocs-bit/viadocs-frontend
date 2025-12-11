@@ -48,7 +48,7 @@ const trackUserActivity = async () => {
   if (!token) return;
 
   try {
-    await fetch("http://viadocs.in//api/activity/track-usage", {
+    await fetch("https://viadocs-backend-u977.onrender.com/api/activity/track-usage", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -35,7 +35,7 @@ export default function Contact() {
 
     try {
       const res = await axios.post(
-        "http://viadocs.in//api/contact",
+        "https://viadocs-backend-u977.onrender.com/api/contact",
         formData
       );
       if (res.status === 200) {

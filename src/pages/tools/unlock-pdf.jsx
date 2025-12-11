@@ -72,7 +72,7 @@ export default function UnlockPDF() {
       form.append("pdfFile", file);
 
       const res = await axios.post(
-        "http://viadocs.in//api/tools/unlock-pdf/check",
+        "https://viadocs-backend-u977.onrender.com/api/tools/unlock-pdf/check",
         form,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -100,7 +100,7 @@ export default function UnlockPDF() {
       form.append("password", password);
 
       const res = await axios.post(
-        "http://viadocs.in//api/tools/unlock-pdf/unlock",
+        "https://viadocs-backend-u977.onrender.com/api/tools/unlock-pdf/unlock",
         form,
         { responseType: "blob" }
       );
